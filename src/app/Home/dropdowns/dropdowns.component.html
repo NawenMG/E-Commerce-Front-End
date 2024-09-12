@@ -3,14 +3,11 @@
   display: flex;
   flex-direction: row;
   justify-content: left;
-  padding-top: 0px;
-  padding-bottom: 0px;
   border: 3px, solid, black;
   width: 1440px;
-  height: 50px;
-  margin-top: 0px;
-  margin-left: 1px;
+  height: 52.5px;
   border-top: none;
+  gap: 10px;
   }
 
   #dropdownButton{
@@ -29,7 +26,7 @@
 
 
 
-<div id="dropdowns">
+<!--<div id="dropdowns">
   <div
        class="dropdown"
        id="dropdownCategories">
@@ -42,12 +39,95 @@
          *ngFor="let categoria of categories">
           {{categoria}}
         </button>
-        <ul class="dropdown-menu">
-          <li *ngFor="let sottoCategoria of sottoCategories"><a class="dropdown-item" href="#">{{sottoCategoria}}</a></li>
+        <ul class="dropdown-menu" [ngSwitch]="categories">
+          <li *ngSwitchCase="'ELETTRONICA'">
+            <a class="dropdown-item" *ngFor="let sottocategoria of sottoCategory1" href="#">{{sottocategoria}}</a>
+          </li>
+          <li *ngSwitchCase="'MODA'">
+            <a class="dropdown-item" *ngFor="let sottocategoria of sottoCategory2" href="#">{{sottocategoria}}</a>
+          </li>
+          <li *ngSwitchCase="'CASA'">
+            <a class="dropdown-item" *ngFor="let sottocategoria of sottoCategory3" href="#">{{sottocategoria}}</a>
+          </li>
+          <li *ngSwitchCase="'BELLEZZA'">
+            <a class="dropdown-item" *ngFor="let sottocategoria of sottoCategory4" href="#">{{sottocategoria}}</a>
+          </li>
+          <li *ngSwitchCase="'SPORT'">
+            <a class="dropdown-item" *ngFor="let sottocategoria of sottoCategory5" href="#">{{sottocategoria}}</a>
+          </li>
+          <li *ngSwitchCase="'CULTURA'">
+            <a class="dropdown-item" *ngFor="let sottocategoria of sottoCategory6" href="#">{{sottocategoria}}</a>
+          </li>
         </ul>
       </div>
+</div>-->
+
+<!--<div id="dropdowns" *ngFor="let cat of categoriesDropdowns">
+  <div class="dropdown" id="dropdownCategories">
+    <button
+      class="btn btn-secondary dropdown-toggle"
+      type="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+      id="dropdownButton">
+      {{ cat.name }}
+    </button>
+    <ul class="dropdown-menu">
+      Itera su tutte le sottocategorie della categoria corrente
+      <li *ngFor="let subcategory of cat.category1">
+        <a class="dropdown-item" href="#">{{ subcategory }}</a>
+      </li>
+      <li *ngFor="let subcategory of cat.category2">
+        <a class="dropdown-item" href="#">{{ subcategory }}</a>
+      </li>
+      <li *ngFor="let subcategory of cat.category3">
+        <a class="dropdown-item" href="#">{{ subcategory }}</a>
+      </li>
+      <li *ngFor="let subcategory of cat.category4">
+        <a class="dropdown-item" href="#">{{ subcategory }}</a>
+      </li>
+      <li *ngFor="let subcategory of cat.category5">
+        <a class="dropdown-item" href="#">{{ subcategory }}</a>
+      </li>
+      <li *ngFor="let subcategory of cat.category6">
+        <a class="dropdown-item" href="#">{{ subcategory }}</a>
+      </li>
+    </ul>
+  </div>
+</div>-->
 
 
-
-
+<div
+ class="dropdown"
+ id="dropdowns">
+ <div *ngFor="let cat of categoriesDropdowns">
+   <button
+    class="btn btn-secondary dropdown-toggle"
+    type="button"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+    id="dropdownButton">
+     {{cat.name}}
+   </button>
+   <ul class="dropdown-menu">
+     <li><a class="dropdown-item" href="#">
+       {{cat.category1}}
+     </a></li>
+     <li><a class="dropdown-item" href="#">
+       {{cat.category2}}
+     </a></li>
+     <li><a class="dropdown-item" href="#">
+       {{cat.category3}}
+     </a></li>
+     <li><a class="dropdown-item" href="#">
+       {{cat.category4}}
+     </a></li>
+     <li><a class="dropdown-item" href="#">
+       {{cat.category5}}
+     </a></li>
+     <li><a class="dropdown-item" href="#">
+       {{cat.category6}}
+     </a></li>
+   </ul>
+ </div>
 </div>
