@@ -2,14 +2,11 @@
   display: flex;
   flex-direction: row;
   justify-content: left;
-  padding-top: 0px;
-  padding-bottom: 0px;
   border: 3px, solid, black;
   width: 1440px;
-  height: 50px;
-  margin-top: 0px;
-  margin-left: 1px;
+  height: 52.5px;
   border-top: none;
+  gap: 10px;
   }
 
   #dropdownButton{
