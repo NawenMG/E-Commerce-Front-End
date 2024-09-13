@@ -9,6 +9,7 @@ import { CarouselseriesComponent } from "./Home/carouselseries/carouselseries.co
 import { FooterComponent } from "./Home/footer/footer.component";
 import { CardsprodottiComponent } from './Paginazione/cardsprodotti/cardsprodotti.component';
 import { FiltroComponent } from "./Paginazione/filtro/filtro.component";
+import { CountpagComponent } from "./Paginazione/countpag/countpag.component";
 
 @Component({
   selector: 'app-root',
@@ -23,7 +24,8 @@ import { FiltroComponent } from "./Paginazione/filtro/filtro.component";
     CarouselseriesComponent,
     FooterComponent,
     CardsprodottiComponent,
-    FiltroComponent
+    FiltroComponent,
+    CountpagComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
