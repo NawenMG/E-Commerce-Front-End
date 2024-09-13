@@ -1,0 +1,149 @@
+<style>
+  #div{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+  }
+
+  #buttonCarrello{
+  height: 50px;
+  width: 100px;
+  color: black;
+  background-color: aqua;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+  padding: 5px;
+  margin-top: 60px;
+  margin-left: 25px;
+  margin-bottom: 92px;
+
+}
+
+#carrello{
+  font-size: 30px;
+  padding: 5px;
+  margin: 5px;
+  color: white;
+}
+
+#saetta{
+  font-size: 30px;
+  padding: 5px;
+  margin: 5px;
+  color: white;
+}
+
+#price{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-color: aqua;
+  color: black;
+  border: none;
+  width: 240px;
+  height: 50px;
+}
+
+#headerCard{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#share{
+  float: right;
+  color: black;
+  height: 30px;
+  width: 30px;
+}
+
+#heart{
+  float: right;
+  color: black;
+  height: 30px;
+  width: 30px;
+}
+
+
+</style>
+
+
+
+
+
+<div id="div" *ngFor="let n of numeri" style="border: 3px solid black;">
+  <div class="card mb-3" style="width: 1440px; height: 500px; border: none;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <div class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img [src]="immagine1" class="img-fluid rounded-start" alt="..." style="width: 600px; height: 500px;">
+            </div>
+            <div class="carousel-item active">
+              <img [src]="immagine2" class="img-fluid rounded-start" alt="..." style="width: 600px; height: 500px;">
+            </div>
+            <div class="carousel-item active">
+              <img [src]="immagine3" class="img-fluid rounded-start" alt="..." style="width: 600px; height: 500px;">
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <a href="#" id="heart">
+            <i class="bi bi-suit-heart"></i>
+          </a>
+          <a href="#" id="share">
+            <i class="bi bi-share"></i>
+          </a>
+          <h5 class="card-title" id="headerCard">Nome prodotto</h5>
+          <app-ratingreviews></app-ratingreviews>
+          <p class="card-text">
+            This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis nihil nesciunt dicta debitis explicabo incidunt similique cupiditate, molestiae itaque expedita aliquam ducimus atque repellat cum? Quibusdam dicta quasi porro enim?
+            Lorem ipsum dolor{{n}} sit amet consectetur adipisicing elit. Debitis sequi minima atque ex omnis deleniti, accusantium laboriosam nisi neque cum quis vel magnam nemo aspernatur cumque. Amet neque soluta aut.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam architecto alias, et odit at debitis, voluptate aliquid voluptatem beatae amet minus quibusdam animi! Similique voluptatem porro sint perferendis dolor consequuntur.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque provident, tenetur non veritatis fugit iste ducimus, molestias inventore, rem atque consequatur cum distinctio libero in quibusdam quia deserunt minima est?
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem ipsa aliquam aspernatur, rem aliquid sed ullam optio temporibus nesciunt maxime cumque nihil architecto! Dolore quidem corrupti incidunt doloribus est voluptatibus!
+          </p>
+          <p>
+            <button
+             type="button"
+             class="btn btn-primary btn-lg disabled"
+             id="price"
+             style="margin-top: 60px; margin-left: 25px; margin-bottom: 92px;">
+               PREZZO €
+            </button>
+            <button
+             type="button"
+             class="btn"
+             id="buttonCarrello"
+             style="margin-left: 50px;">
+             <i
+              class="bi bi-cart4"
+              id="carrello"></i>
+            </button>
+            <button
+             type="button"
+             class="btn"
+             id="buttonCarrello"
+             style="margin-left: 20px;">
+             <i
+              class="bi bi-lightning-charge"
+              id="saetta"
+              style="margin-left: 20px; padding-right: 20px;"></i>
+            </button>
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
