@@ -1,0 +1,107 @@
+<style>
+  #container{
+    display: flex;
+    flex-direction: row;
+  }
+
+
+  #div{
+    width: 1034px;
+    height: 790px;
+    border: 3px solid black;
+  }
+
+  #div-title{
+    border: 3px solid black;
+    border-left: none;
+    border-bottom: none;
+  }
+
+  #title{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-left: 10px;
+  }
+
+  .container-review{
+    border: 3px solid black;
+    border-top: 6px solid black;
+  }
+
+  #add{
+    background-color: aqua;
+    color: black;
+    width: 400px;
+    height: 50px;
+    border: none;
+    margin-top: 20px;
+    margin-left: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+
+  #view{
+    background-color: aqua;
+    color: black;
+    width: 400px;
+    height: 50px;
+    border: none;
+    margin-left: 100px;
+    margin-top: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+
+</style>
+
+<div id="container">
+  <app-mediareviews></app-mediareviews>
+
+  <div id="div">
+    <div id="div-title">
+      <h1 id="title">
+        RECENSIONI
+      </h1>
+    </div>
+    <div class="container-review">
+      <h1 style="margin-left: 10px;">
+        Nome utente
+      </h1>
+      <app-ratingreviews style="margin-left: 10px;"></app-ratingreviews>
+      <h1 style="margin-left: 10px;">
+        Title
+      </h1>
+      <p style="margin-left: 10px;">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat cum aspernatur impedit earum adipisci saepe dolores, sed doloribus at temporibus id maiores, doloremque vero officiis ullam labore excepturi iste itaque?
+      </p>
+
+      <div class="container-review">
+        <h1 style="margin-left: 10px;">
+          Nome utente
+        </h1>
+        <app-ratingreviews style="margin-left: 10px;"></app-ratingreviews>
+        <h1 style="margin-left: 10px;">
+          Title
+        </h1>
+        <p style="margin-left: 10px;">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat cum aspernatur impedit earum adipisci saepe dolores, sed doloribus at temporibus id maiores, doloremque vero officiis ullam labore excepturi iste itaque?
+        </p>
+
+        <div class="container-review">
+          <h1 style="margin-left: 10px;">
+            Nome utente
+          </h1>
+          <app-ratingreviews style="margin-left: 10px;"></app-ratingreviews>
+          <h1 style="margin-left: 10px;">
+            Title
+          </h1>
+          <p style="margin-left: 10px;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat cum aspernatur impedit earum adipisci saepe dolores, sed doloribus at temporibus id maiores, doloremque vero officiis ullam labore excepturi iste itaque?
+          </p>
+    </div>
+
+
+
+
+  </div>
+</div>
+<button type="button" class="btn btn-primary btn-lg" id="add">Aggiungi recensione</button>
+<button type="button" class="btn btn-primary btn-lg" id="view">Vedi tutto</button>
+

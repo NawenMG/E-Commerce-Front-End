@@ -1,0 +1,34 @@
+#divv{
+  margin-top: 8px;
+  border: 3px solid black;
+}
+
+#divvv{
+  height: 400px;
+  width: 1440px;
+}
+
+#imgAzienda{
+      width: 250px; /* Larghezza fissa */
+      height: 250px; /* Altezza fissa, stessa della larghezza per avere un cerchio perfetto */
+      border-radius: 50%; /* Trasforma l'immagine in rotonda */
+      object-fit: cover; /* Taglia e adatta l'immagine per mantenere le proporzioni */
+      border: 3px solid #000; /* Aggiunge un bordo, facoltativo */
+      margin-left: 100px;
+      margin-top: 30px;
+}
+
+#descrizioneAzienda{
+  margin-right: 100px;
+}
+
+#buttonSend{
+  height: 45px;
+  width: 45px;
+}
+
+#mex{
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+}

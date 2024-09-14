@@ -1,0 +1,62 @@
+#div{
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+#buttonCarrello{
+height: 50px;
+width: 100px;
+color: black;
+background-color: aqua;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+text-align: center;
+padding: 5px;
+margin-top: 60px;
+margin-left: 25px;
+margin-bottom: 92px;
+
+}
+
+#carrello{
+font-size: 30px;
+padding: 5px;
+margin: 5px;
+color: white;
+}
+
+#saetta{
+font-size: 30px;
+padding: 5px;
+margin: 5px;
+color: white;
+}
+
+#price{
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+background-color: aqua;
+color: black;
+border: none;
+width: 240px;
+height: 50px;
+}
+
+#headerCard{
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#share{
+float: right;
+color: black;
+height: 30px;
+width: 30px;
+}
+
+#heart{
+float: right;
+color: black;
+height: 30px;
+width: 30px;
+}
+
+

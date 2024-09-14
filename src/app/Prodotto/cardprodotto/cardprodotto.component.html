@@ -1,0 +1,222 @@
+<style>
+  #div{
+    height: 720px;
+    width: 1500px;
+    border: 3px solid black;
+  }
+
+
+
+#price{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-content: center;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+background-color: aqua;
+color: black;
+border: none;
+width: 240px;
+height: 50px;
+margin-top: 10px;
+margin-left: 350px;
+margin-bottom: 10px;
+}
+
+#headerCard{
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+text-align: center;
+margin-left: 65px;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+#share{
+float: right;
+color: black;
+height: 30px;
+width: 30px;
+}
+
+#heart{
+float: right;
+color: black;
+height: 30px;
+width: 30px;
+}
+
+#imgCar{
+  width: 600px;
+  height: 700px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.card-title{
+  font-size: 40px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+  color: black;
+}
+
+#rating{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+#scelta{
+  background-color:paleturquoise;
+  opacity: 75%;
+}
+
+#counter{
+  width: 78px;
+  margin-bottom: 2px;
+}
+
+#increment{
+  margin-left: 15px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 0px;
+  color: white;
+  background-color: black;
+}
+
+#decrement{
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 0px;
+  color: white;
+  background-color: black;
+}
+
+#info{
+  width: 300px;
+  float: right;
+  margin-top: -70px;
+  margin-right: 500px;
+  padding-top: 10px;
+}
+
+#buyCarWish{
+  width: 740px;
+  height: 50px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+  margin-left: 110px;
+  margin-top: 10px;
+  background-color: aqua;
+  color: black;
+  border: none;
+}
+
+
+
+
+
+</style>
+
+
+
+
+<div id="div" style="border: 3px solid black;">
+
+  <!--Card-->
+  <div class="card mb-3" style="width: 1440px; height: 500px; border: none;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <div class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img [src]="immagine1" class="img-fluid rounded-start" alt="..." id="imgCar" >
+            </div>
+            <div class="carousel-item active">
+              <img [src]="immagine2" class="img-fluid rounded-start" alt="..." id="imgCar">
+            </div>
+            <div class="carousel-item active">
+              <img [src]="immagine3" class="img-fluid rounded-start" alt="..." id="imgCar">
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <a href="#" id="heart">
+            <i class="bi bi-suit-heart"></i>
+          </a>
+          <a href="#" id="share">
+            <i class="bi bi-share"></i>
+          </a>
+          <h5 class="card-title" id="headerCard">Nome prodotto</h5>
+          <app-ratingreviews id="rating"></app-ratingreviews>
+          <p>
+            <button
+             type="button"
+             class="btn btn-primary btn-lg disabled"
+             id="price">
+               PREZZO €
+            </button>
+          </p>
+          <p>
+            <label for="scelta">Tipologie</label>
+            <select class="form-select" aria-label="Default select example" id="scelta" name="scelta">
+              <option selected>Open this select menu</option>
+              <option value="1">Type-One</option>
+              <option value="2">Type-Two</option>
+              <option value="3">Type-Three</option>
+            </select>
+          </p>
+          <p>
+            <label for="counter">Quantità</label>
+            <input type="text"  class="form-control text-center" id="counter" value="1" readonly name="counter">
+            <button class="btn btn-outline-secondary" type="button" id="decrement">-</button>
+            <button class="btn btn-outline-secondary" type="button" id="increment">+</button>
+            <span id="info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem perspiciatis minus optio sapiente pariatur quod, sequi itaque vero ratione, reiciendis, temporibus fugiat eligendi necessitatibus sunt est atque modi vitae quis.</span>
+          </p>
+          <p>
+            <button type="button" class="btn btn-primary" id="buyCarWish" style="margin-top: 50px;">BUY NOW</button>
+            <button type="button" class="btn btn-primary" id="buyCarWish">ADD CART</button>
+            <button type="button" class="btn btn-primary" id="buyCarWish">ADD WISHLIST</button>
+          </p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <script>
+    // JavaScript per incrementare e decrementare il valore
+    const incrementButton = document.getElementById('increment');
+    const decrementButton = document.getElementById('decrement');
+    const counterInput = document.getElementById('counter');
+
+    incrementButton.addEventListener('click', () => {
+      let currentValue = parseInt(counterInput.value);
+      counterInput.value = currentValue + 1;
+    });
+
+    decrementButton.addEventListener('click', () => {
+      let currentValue = parseInt(counterInput.value);
+      if (currentValue > 0) { // Per evitare che il valore scenda sotto 0
+        counterInput.value = currentValue - 1;
+      }
+    });
+  </script>

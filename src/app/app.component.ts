@@ -10,6 +10,13 @@ import { FooterComponent } from "./Home/footer/footer.component";
 import { CardsprodottiComponent } from './Paginazione/cardsprodotti/cardsprodotti.component';
 import { FiltroComponent } from "./Paginazione/filtro/filtro.component";
 import { CountpagComponent } from "./Paginazione/countpag/countpag.component";
+import { CardprodottoComponent } from "./Prodotto/cardprodotto/cardprodotto.component";
+import { AccordionsprodottoComponent } from "./Prodotto/accordionsprodotto/accordionsprodotto.component";
+import { CardaziendaComponent } from "./Prodotto/cardazienda/cardazienda.component";
+import { RatingreviewsComponent } from "./Paginazione/cardsprodotti/ratingreviews/ratingreviews.component";
+import { MediareviewsComponent } from "./Prodotto/mediareviews/mediareviews.component";
+import { DomandeERisposteComponent } from "./Prodotto/domande-e-risposte/domande-e-risposte.component";
+import { ReviewsComponent } from "./Prodotto/reviews/reviews.component";
 
 @Component({
   selector: 'app-root',
@@ -25,7 +32,14 @@ import { CountpagComponent } from "./Paginazione/countpag/countpag.component";
     FooterComponent,
     CardsprodottiComponent,
     FiltroComponent,
-    CountpagComponent
+    CountpagComponent,
+    CardprodottoComponent,
+    AccordionsprodottoComponent,
+    CardaziendaComponent,
+    RatingreviewsComponent,
+    MediareviewsComponent,
+    DomandeERisposteComponent,
+    ReviewsComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
