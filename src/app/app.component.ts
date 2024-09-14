@@ -17,6 +17,8 @@ import { RatingreviewsComponent } from "./Paginazione/cardsprodotti/ratingreview
 import { MediareviewsComponent } from "./Prodotto/mediareviews/mediareviews.component";
 import { DomandeERisposteComponent } from "./Prodotto/domande-e-risposte/domande-e-risposte.component";
 import { ReviewsComponent } from "./Prodotto/reviews/reviews.component";
+import { ImmagineComponent } from "./Profile/immagine/immagine.component";
+import { InfoCredenzialiComponent } from "./Profile/info-credenziali/info-credenziali.component";
 
 @Component({
   selector: 'app-root',
@@ -39,7 +41,9 @@ import { ReviewsComponent } from "./Prodotto/reviews/reviews.component";
     RatingreviewsComponent,
     MediareviewsComponent,
     DomandeERisposteComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    ImmagineComponent,
+    InfoCredenzialiComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

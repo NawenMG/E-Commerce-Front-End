@@ -59,4 +59,118 @@ height: 30px;
 width: 30px;
 }
 
+#div{
+  height: 720px;
+  width: 1500px;
+  border: 3px solid black;
+}
 
+
+
+#price{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-content: center;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+background-color: aqua;
+color: black;
+border: none;
+width: 240px;
+height: 50px;
+margin-top: 10px;
+margin-left: 350px;
+margin-bottom: 10px;
+}
+
+#headerCard{
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+text-align: center;
+margin-left: 65px;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+#share{
+float: right;
+color: black;
+height: 30px;
+width: 30px;
+}
+
+#heart{
+float: right;
+color: black;
+height: 30px;
+width: 30px;
+}
+
+#imgCar{
+width: 600px;
+height: 700px;
+margin-left: 20px;
+margin-top: 10px;
+}
+
+.card-title{
+font-size: 40px;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+text-align: center;
+color: black;
+}
+
+#rating{
+display: flex;
+flex-direction: row;
+justify-content: center;
+margin-bottom: 10px;
+}
+
+#scelta{
+background-color:paleturquoise;
+opacity: 75%;
+}
+
+#counter{
+width: 78px;
+margin-bottom: 2px;
+}
+
+#increment{
+margin-left: 15px;
+width: 30px;
+height: 30px;
+text-align: center;
+padding: 0px;
+color: white;
+background-color: black;
+}
+
+#decrement{
+width: 30px;
+height: 30px;
+text-align: center;
+padding: 0px;
+color: white;
+background-color: black;
+}
+
+#info{
+width: 300px;
+float: right;
+margin-top: -70px;
+margin-right: 500px;
+padding-top: 10px;
+}
+
+#buyCarWish{
+width: 740px;
+height: 50px;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+text-align: center;
+margin-left: 110px;
+margin-top: 10px;
+background-color: aqua;
+color: black;
+border: none;
+}
