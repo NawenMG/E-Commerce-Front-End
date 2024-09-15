@@ -1,0 +1,204 @@
+<style>
+  #form {
+    width: 100%; /* Utilizza il 100% della larghezza disponibile */
+    max-width: 1325px; /* Imposta una larghezza massima */
+    border: 1px solid gray;
+    padding: 10px;
+    margin: 87px auto;
+    margin-top: 10px;
+    display: grid;
+    grid-template-areas:
+      "containerA containerB containerC";
+    grid-template-columns: 1fr 1fr 1fr; /* Tre colonne uguali */
+    grid-gap: 20px; /* Spaziatura tra le colonne */
+  }
+
+  .containerA, .containerB, .containerC {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spaziatura tra gli elementi all'interno dei contenitori */
+  }
+
+  .containerA {
+    grid-area: containerA;
+  }
+
+  .containerB {
+    grid-area: containerB;
+  }
+
+  .containerC {
+    grid-area: containerC;
+  }
+
+  .form-control, .form-check-input, .form-label {
+    margin-bottom: 10px; /* Spaziatura inferiore tra gli input e le etichette */
+  }
+
+  small.alert {
+    margin-top: 5px; /* Margine tra l'input e l'alert */
+  }
+
+  #mainContainer {
+    width: 100%;
+    max-width: 1440px;
+    height: auto;
+    border: 3px solid black;
+    padding: 20px;
+  }
+
+  #Invio {
+    width: 320px;
+    height: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border: none;
+    background-color: aqua;
+  }
+</style>
+
+<div id="mainContainer">
+  <h1
+  style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+  padding-bottom: 10px;">
+    REGISTRAZIONE
+  </h1>
+  <form [formGroup]="groupForms" (ngSubmit)="onSubmit()" id="form">
+
+
+    <!-- Colonna A -->
+    <div class="containerA">
+      <label for="Credenziale1" class="form-label">Credenziale 1:</label>
+      <input type="text" id="Credenziale1" formControlName="Credenziale1" class="form-control" name="Credenziale1">
+      <div *ngIf="groupForms.get('Credenziale1')?.invalid && groupForms.get('Credenziale1')?.touched">
+        <small *ngIf="groupForms.get('Credenziale1')?.errors?.['required']" class="alert alert-danger" role="alert">Questo campo è obbligatorio.</small>
+        <small *ngIf="groupForms.get('Credenziale1')?.errors?.['minlength']" class="alert alert-danger" role="alert">
+          Deve avere almeno {{ groupForms.get('Credenziale1')?.errors?.['minlength']?.requiredLength }} caratteri.
+        </small>
+      </div>
+
+      <label for="Credenziale2" class="form-label">Credenziale 2:</label>
+      <input type="text" id="Credenziale2" formControlName="Credenziale2" class="form-control" name="Credenziale2">
+      <div *ngIf="groupForms.get('Credenziale2')?.invalid && groupForms.get('Credenziale2')?.touched">
+        <small *ngIf="groupForms.get('Credenziale2')?.errors?.['required']" class="alert alert-danger" role="alert">Questo campo è obbligatorio.</small>
+        <small *ngIf="groupForms.get('Credenziale2')?.errors?.['minlength']" class="alert alert-danger" role="alert">
+          Deve avere almeno {{ groupForms.get('Credenziale2')?.errors?.['minlength']?.requiredLength }} caratteri.
+        </small>
+      </div>
+
+      <label for="Credenziale3" class="form-label">Credenziale 3:</label>
+      <input type="text" id="Credenziale3" formControlName="Credenziale3" class="form-control" name="Credenziale3">
+      <div *ngIf="groupForms.get('Credenziale3')?.invalid && groupForms.get('Credenziale3')?.touched">
+        <small *ngIf="groupForms.get('Credenziale3')?.errors?.['required']" class="alert alert-danger" role="alert">Questo campo è obbligatorio.</small>
+        <small *ngIf="groupForms.get('Credenziale3')?.errors?.['minlength']" class="alert alert-danger" role="alert">
+          Deve avere almeno {{ groupForms.get('Credenziale3')?.errors?.['minlength']?.requiredLength }} caratteri.
+        </small>
+      </div>
+
+      <label for="Credenziale4" class="form-label">Credenziale 4:</label>
+      <input type="text" id="Credenziale4" formControlName="Credenziale4" class="form-control" name="Credenziale4">
+      <div *ngIf="groupForms.get('Credenziale4')?.invalid && groupForms.get('Credenziale4')?.touched">
+        <small *ngIf="groupForms.get('Credenziale4')?.errors?.['required']" class="alert alert-danger" role="alert">Questo campo è obbligatorio.</small>
+        <small *ngIf="groupForms.get('Credenziale4')?.errors?.['minlength']" class="alert alert-danger" role="alert">
+          Deve avere almeno {{ groupForms.get('Credenziale4')?.errors?.['minlength']?.requiredLength }} caratteri.
+        </small>
+      </div>
+
+      <input class="form-check-input" type="radio" name="Condizione1" id="Condizione1" formControlName="Condizione1">
+      <label class="form-check-label" for="Condizione1">Condizione 1</label>
+      <div *ngIf="groupForms.get('Condizione1')?.invalid && groupForms.get('Condizione1')?.touched">
+        <small *ngIf="groupForms.get('Condizione1')?.errors?.['requiredTrue']" class="alert alert-danger" role="alert">Questo campo deve essere accettato.</small>
+      </div>
+
+      <input  class="form-check-input" type="radio" name="Condizione2" id="Condizione2" formControlName="Condizione2">
+      <label class="form-check-label" for="Condizione2">Condizione 2</label>
+      <div *ngIf="groupForms.get('Condizione2')?.invalid && groupForms.get('Condizione2')?.touched">
+        <small *ngIf="groupForms.get('Condizione2')?.errors?.['requiredTrue']" class="alert alert-danger" role="alert">Questo campo deve essere accettato.</small>
+      </div>
+    </div>
+
+    <!-- Colonna B -->
+    <div class="containerB">
+      <label for="Info1" class="form-label">Info 1:</label>
+      <input type="text" id="Info1" formControlName="Info1" class="form-control" name="Info1">
+      <div *ngIf="groupForms.get('Info1')?.invalid && groupForms.get('Info1')?.touched">
+        <small *ngIf="groupForms.get('Info1')?.errors?.['maxlength']" class="alert alert-danger" role="alert">
+          Non si devono superare i {{ groupForms.get('Info1')?.errors?.['maxlength']?.requiredLength }} caratteri.
+        </small>
+      </div>
+
+      <label for="Info2" class="form-label">Info 2:</label>
+      <input type="text" id="Info2" formControlName="Info2" class="form-control" name="Info2">
+      <div *ngIf="groupForms.get('Info2')?.invalid && groupForms.get('Info2')?.touched">
+        <small *ngIf="groupForms.get('Info2')?.errors?.['maxlength']" class="alert alert-danger" role="alert">
+          Non si devono superare i {{ groupForms.get('Info2')?.errors?.['maxlength']?.requiredLength }} caratteri.
+        </small>
+      </div>
+
+      <label for="Info3" class="form-label">Info 3:</label>
+      <input type="text" id="Info3" formControlName="Info3" class="form-control" name="Info3">
+      <div *ngIf="groupForms.get('Info3')?.invalid && groupForms.get('Info3')?.touched">
+        <small *ngIf="groupForms.get('Info3')?.errors?.['maxlength']" class="alert alert-danger" role="alert">
+          Non si devono superare i {{ groupForms.get('Info3')?.errors?.['maxlength']?.requiredLength }} caratteri.
+        </small>
+      </div>
+
+      <label for="Info4" class="form-label">Info 4:</label>
+      <input type="text" id="Info4" formControlName="Info4" class="form-control" name="Info4">
+      <div *ngIf="groupForms.get('Info4')?.invalid && groupForms.get('Info4')?.touched">
+        <small *ngIf="groupForms.get('Info4')?.errors?.['maxlength']" class="alert alert-danger" role="alert">
+          Non si devono superare i {{ groupForms.get('Info4')?.errors?.['maxlength']?.requiredLength }} caratteri.
+        </small>
+      </div>
+
+      <label for="Info5" class="form-label">Info 5:</label>
+      <input type="text" id="Info5" formControlName="Info5" class="form-control" name="Info5">
+      <div *ngIf="groupForms.get('Info5')?.invalid && groupForms.get('Info5')?.touched">
+        <small *ngIf="groupForms.get('Info5')?.errors?.['maxlength']" class="alert alert-danger" role="alert">
+          Non si devono superare i {{ groupForms.get('Info5')?.errors?.['maxlength']?.requiredLength }} caratteri.
+        </small>
+      </div>
+
+      <label for="Info6" class="form-label">Info 6:</label>
+      <input type="text" id="Info6" formControlName="Info6" class="form-control" name="Info6">
+      <div *ngIf="groupForms.get('Info6')?.invalid && groupForms.get('Info6')?.touched">
+        <small *ngIf="groupForms.get('Info6')?.errors?.['maxlength']" class="alert alert-danger" role="alert">
+          Non si devono superare i {{ groupForms.get('Info6')?.errors?.['maxlength']?.requiredLength }} caratteri.
+        </small>
+      </div>
+    </div>
+
+    <!-- Colonna C -->
+    <div class="containerC">
+      <label for="Immagine" class="form-label">Immagine di profilo:</label>
+      <input type="file" id="Immagine" formControlName="Immagine" class="form-control" name="Immagine">
+
+      <h5 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+        PREFERENZE:
+      </h5>
+
+      <input type="checkbox" class="form-check-input"  name="Check1" id="Check1" formControlName="Check1">
+      <label class="form-check-label" for="Check1">Opzione</label>
+
+      <input type="checkbox" class="form-check-input"  name="Check2" id="Check2" formControlName="Check2">
+      <label class="form-check-label" for="Check2">Opzione</label>
+
+      <input type="checkbox" class="form-check-input"  name="Check3" id="Check3" formControlName="Check3">
+      <label class="form-check-label" for="Check3">Opzione</label>
+
+      <input type="checkbox" class="form-check-input"  name="Check4" id="Check4" formControlName="Check4">
+      <label class="form-check-label" for="Check4">Opzione</label>
+
+      <input type="checkbox" class="form-check-input"  name="Check5" id="Check5" formControlName="Check5">
+      <label class="form-check-label" for="Check5">Opzione</label>
+
+
+    </div>
+
+    <!-- Pulsante di invio -->
+    <div style="grid-column: span 3; text-align: center;">
+      <button id="Invio" type="submit">Invia</button>
+    </div>
+
+  </form>
+</div>

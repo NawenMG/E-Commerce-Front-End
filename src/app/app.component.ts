@@ -19,6 +19,8 @@ import { DomandeERisposteComponent } from "./Prodotto/domande-e-risposte/domande
 import { ReviewsComponent } from "./Prodotto/reviews/reviews.component";
 import { ImmagineComponent } from "./Profile/immagine/immagine.component";
 import { InfoCredenzialiComponent } from "./Profile/info-credenziali/info-credenziali.component";
+import { FormsSeriesComponent } from "./Registrazione/forms-series/forms-series.component";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -43,7 +45,11 @@ import { InfoCredenzialiComponent } from "./Profile/info-credenziali/info-creden
     DomandeERisposteComponent,
     ReviewsComponent,
     ImmagineComponent,
-    InfoCredenzialiComponent
+    InfoCredenzialiComponent,
+    FormsSeriesComponent,
+    ReactiveFormsModule,
+    FormsModule
+
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
