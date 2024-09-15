@@ -1,1 +1,91 @@
-<p>login works!</p>
+<style>
+
+  #mainContainer{
+    width: 1440px;
+    height: 1024px;
+    border: 3px solid black;
+  }
+
+  #h{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  #form{
+    margin: 30px 420px 200px 420px;
+    width: 600px;
+    height: 623px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+    padding: 100px 190px 100px 190px;
+  }
+
+
+
+ #miss{
+  margin-top: 30px;
+  width: 270px;
+  height: 50px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin-left: -25px;
+ }
+
+ #invio{
+  width: 320px;
+  height: 50px;
+  background-color: aqua;
+  color: black;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin-left: -50px;
+ }
+
+ #new{
+  width: 270px;
+  height: 50px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin-left: -25px;
+ }
+
+
+
+
+</style>
+
+<div id="mainContainer">
+  <h1 id="h">
+    LOGIN
+  </h1>
+  <form [formGroup]="groupForms" (ngSubmit)="onSubmit()" id="form">
+
+    <label for="Email" class="form-label">Email</label>
+      <input type="text" id="Email" formControlName="Email" class="form-control" name="Email">
+      <div *ngIf="groupForms.get('Email')?.invalid && groupForms.get('Email')?.touched">
+        <small *ngIf="groupForms.get('Email')?.errors?.['required']" class="alert alert-danger" role="alert">Questo campo è obbligatorio.</small>
+        <small *ngIf="groupForms.get('Email')?.errors?.['email']" class="alert alert-danger" role="alert">
+          Email non valida
+        </small>
+      </div>
+
+      <label for="Password" class="form-label">Password</label>
+      <input type="text" id="Password" formControlName="Password" class="form-control" name="Password">
+      <div *ngIf="groupForms.get('Password')?.invalid && groupForms.get('Password')?.touched">
+        <small *ngIf="groupForms.get('Password')?.errors?.['required']" class="alert alert-danger" role="alert">Password obbligatoria.</small>
+      </div>
+
+      <button type="button" class="btn btn-outline-warning" id="miss">Email/Password dimenticata</button>
+
+      <button type="button" class="btn" id="invio">INVIO</button>
+
+      <button type="button" class="btn btn-outline-info" id="new">CREA NUOVO ACCOUNT</button>
+
+
+
+  </form>
+
+</div>
