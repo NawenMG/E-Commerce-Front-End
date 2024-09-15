@@ -1,0 +1,55 @@
+#form {
+  width: 100%; /* Utilizza il 100% della larghezza disponibile */
+  max-width: 1325px; /* Imposta una larghezza massima */
+  border: 1px solid gray;
+  padding: 10px;
+  margin: 87px auto;
+  margin-top: 10px;
+  display: grid;
+  grid-template-areas:
+    "containerA containerB containerC";
+  grid-template-columns: 1fr 1fr 1fr; /* Tre colonne uguali */
+  grid-gap: 20px; /* Spaziatura tra le colonne */
+}
+
+.containerA, .containerB, .containerC {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Spaziatura tra gli elementi all'interno dei contenitori */
+}
+
+.containerA {
+  grid-area: containerA;
+}
+
+.containerB {
+  grid-area: containerB;
+}
+
+.containerC {
+  grid-area: containerC;
+}
+
+.form-control, .form-check-input, .form-label {
+  margin-bottom: 10px; /* Spaziatura inferiore tra gli input e le etichette */
+}
+
+small.alert {
+  margin-top: 5px; /* Margine tra l'input e l'alert */
+}
+
+#mainContainer {
+  width: 100%;
+  max-width: 1440px;
+  height: auto;
+  border: 3px solid black;
+  padding: 20px;
+}
+
+#Invio {
+  width: 320px;
+  height: 50px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  border: none;
+  background-color: aqua;
+}
