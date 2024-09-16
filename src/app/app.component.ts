@@ -23,6 +23,7 @@ import { FormsSeriesComponent } from "./Registrazione/forms-series/forms-series.
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from "./login/login.component";
 import { ProductSellComponent } from "./Product-Sell/product-sell/product-sell.component";
+import { DeliveryDashComponent } from "./Deliverydash/delivery-dash/delivery-dash.component";
 
 @Component({
   selector: 'app-root',
@@ -52,7 +53,8 @@ import { ProductSellComponent } from "./Product-Sell/product-sell/product-sell.c
     ReactiveFormsModule,
     FormsModule,
     LoginComponent,
-    ProductSellComponent
+    ProductSellComponent,
+    DeliveryDashComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

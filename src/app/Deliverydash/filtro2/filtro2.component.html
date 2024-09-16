@@ -1,0 +1,53 @@
+<style>
+  #div{
+    height: 70px;
+    width: 1440px;
+    border: 3px solid black;
+  }
+
+  #h{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    float: left;
+    margin-top: 10px;
+    margin-left: 20px;
+    text-align: left;
+    position: absolute;
+  }
+
+  #drop{
+    float: right;
+  }
+
+  #dropBut{
+    height: 50px;
+    width: 100px;
+    margin-top: 10px;
+    margin-right: 20px;
+    background-color: aqua;
+    border: none;
+  }
+
+  #filtro{
+    font-size: 30px;
+  }
+
+</style>
+
+
+
+<div id="div">
+  <h1 id="h">
+    RISULTATI
+  </h1>
+  <div class="dropdown" id="drop">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropBut">
+      <i class="bi bi-funnel" id="filtro"></i>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Action</a></li>
+      <li><a class="dropdown-item" href="#">Another action</a></li>
+      <li><a class="dropdown-item" href="#">Something else here</a></li>
+    </ul>
+  </div>
+
+</div>
