@@ -1,0 +1,189 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  #mainContainer{
+     width: 100%;
+     max-width: 1440px;
+     height: auto;
+     border: 3px solid black;
+     padding: 20px;
+  }
+
+  #form{
+    width: 100%; /* Utilizza il 100% della larghezza disponibile */
+    max-width: 1325px; /* Imposta una larghezza massima */
+    border: 1px solid gray;
+    padding: 10px;
+    margin: 87px auto;
+    margin-top: 10px;
+    display: grid;
+    grid-template-areas:
+      "containerA containerB containerC";
+    grid-template-columns: 1fr 1fr 1fr; /* Tre colonne uguali */
+    grid-gap: 20px; /* Spaziatura tra le colonne */
+  }
+
+  .containerA, .containerB, .containerC {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spaziatura tra gli elementi all'interno dei contenitori */
+  }
+
+  .containerA {
+    grid-area: containerA;
+  }
+
+  .containerB {
+    grid-area: containerB;
+  }
+
+  .containerC {
+    grid-area: containerC;
+  }
+
+  .form-control, .form-check-input, .form-label {
+    margin-bottom: 10px; /* Spaziatura inferiore tra gli input e le etichette */
+  }
+
+  small.alert {
+    margin-top: 5px; /* Margine tra l'input e l'alert */
+  }
+
+  #Invio {
+    width: 320px;
+    height: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border: none;
+    background-color: aqua;
+  }
+  .input-group {
+      max-width: 200px;
+    }
+
+</style>
+
+<div id="mainContainer">
+  <h1
+  style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+  padding-bottom: 10px;">
+    VENDITA
+  </h1>
+
+  <form [formGroup]="groupForms" (ngSubmit)="onSubmit()" id="form">
+    <!--Container A-->
+    <div class="containerA">
+      <label for="Nome" class="form-label">Nome</label>
+      <input type="text" id="Nome" formControlName="Nome" class="form-control" name="Nome">
+      <div *ngIf="groupForms.get('Credenziale1')?.invalid && groupForms.get('Credenziale1')?.touched">
+        <small *ngIf="groupForms.get('Credenziale1')?.errors?.['required']" class="alert alert-danger" role="alert">Questo campo è obbligatorio.</small>
+      </div>
+
+      <label for="Prezzo" class="form-label">Prezzo</label>
+      <input type="text" id="Prezzo" formControlName="Prezzo" class="form-control" name="Prezzo">
+      <div *ngIf="groupForms.get('Prezzo')?.invalid && groupForms.get('Prezzo')?.touched">
+        <small *ngIf="groupForms.get('Prezzo')?.errors?.['required']" class="alert alert-danger" role="alert">Questo campo è obbligatorio.</small>
+        <small *ngIf="groupForms.get('Prezzo')?.errors?.['min']" class="alert alert-danger" role="alert">
+          Deve essere minimo {{ groupForms.get('Prezzo')?.errors?.['minlength']?.requiredLength }}€.
+        </small>
+      </div>
+
+      <label for="Descrizione" class="form-label">Descrizione</label>
+      <input type="text" id="Descrizione" formControlName="Descrizione" class="form-control" rows="3" name="Descrizione">
+
+      <p>Seleziona quantità</p>
+      <div class="input-group">
+        <button class="btn btn-outline-secondary" type="button" id="Amount">-</button>
+        <input type="number" class="form-control text-center" id="Amount" name="Amount" formControlName="Amount" value="1" min="1">
+        <button class="btn btn-outline-secondary" type="button" id="Amount">+</button>
+      </div>
+    </div>
+
+    <div class="containerB">
+      <label for="Info1" class="form-label">Informazione</label>
+      <input type="text" id="Info1" formControlName="Info1" class="form-control" name="Info1">
+
+      <label for="Info2" class="form-label">Informazione</label>
+      <input type="text" id="Info2" formControlName="Info2" class="form-control" name="Info2">
+
+      <label for="Info3" class="form-label">Informazione</label>
+      <input type="text" id="Info3" formControlName="Info3" class="form-control" name="Info3">
+
+      <label for="Info4" class="form-label">Informazione</label>
+      <input type="text" id="Info4" formControlName="Info4" class="form-control" name="Info4">
+
+      <label for="Info5" class="form-label">Informazione</label>
+      <input type="text" id="Info5" formControlName="Info5" class="form-control" name="Info5">
+
+      <label for="Info6" class="form-label">Informazione</label>
+      <input type="text" id="Info6" formControlName="Info6" class="form-control" name="Info6">
+    </div>
+
+    <div class="containerC">
+      <label for="Immagine" class="form-label">Immagine di profilo:</label>
+      <input type="file" id="Immagine" formControlName="Immagine" class="form-control" name="Immagine">
+      <div *ngIf="groupForms.get('Credenziale1')?.invalid && groupForms.get('Credenziale1')?.touched">
+        <small *ngIf="groupForms.get('Credenziale1')?.errors?.['required']" class="alert alert-danger" role="alert">Questo campo è obbligatorio.</small>
+      </div>
+
+      <table class="table">
+        <tbody>
+          <tr *ngFor="let row of rows; let i = index">
+            <th><strong>
+              <input type="text" [id]="'Scheda' + (i*4+1)" formControlName="Scheda1" class="form-control" [(ngModel)]="row.col1">
+            </strong></th>
+            <td>
+              <input type="text" [id]="'Scheda' + (i*4+2)" formControlName="Scheda2" class="form-control" [(ngModel)]="row.col2">
+            </td>
+            <td>
+              <input type="text" [id]="'Scheda' + (i*4+3)" formControlName="Scheda3" class="form-control" [(ngModel)]="row.col3">
+            </td>
+            <td>
+              <input type="text" [id]="'Scheda' + (i*4+4)" formControlName="Scheda4" class="form-control" [(ngModel)]="row.col4">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="button" class="btn btn-primary" (click)="addRow()">
+        <i class="bi bi-plus-circle"></i> Aggiungi riga
+      </button>
+
+      <div style="grid-column: span 3; text-align: center;">
+        <button id="Invio" type="submit">Invia</button>
+      </div>
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+  </form>
+
+
+</div>
+
+<!-- Bootstrap JS (necessario per i componenti interattivi) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const decrementBtn = document.getElementById('decrement');
+  const incrementBtn = document.getElementById('increment');
+  const quantityInput = document.getElementById('quantity');
+
+  decrementBtn.addEventListener('click', () => {
+    let currentValue = parseInt(quantityInput.value);
+    if (currentValue > parseInt(quantityInput.min)) {
+      quantityInput.value = currentValue - 1;
+    }
+  });
+
+  incrementBtn.addEventListener('click', () => {
+    let currentValue = parseInt(quantityInput.value);
+    quantityInput.value = currentValue + 1;
+  });
+</script>
