@@ -1,0 +1,15 @@
+#div{
+  border: 3px solid black;
+  text-align: center;
+  width: 1440px;
+  height: 1024px;
+}
+
+.btn{
+  width: 270px;
+  height: 40px;
+  border: none;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-color: aqua;
+  color: white;
+}

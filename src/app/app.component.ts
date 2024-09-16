@@ -25,6 +25,7 @@ import { LoginComponent } from "./login/login.component";
 import { ProductSellComponent } from "./Product-Sell/product-sell/product-sell.component";
 import { DeliveryDashComponent } from "./Deliverydash/delivery-dash/delivery-dash.component";
 import { PayDashComponent } from "./Paydash/pay-dash/pay-dash.component";
+import { AdminDashComponent } from "./Admindash/admin-dash/admin-dash.component";
 
 @Component({
   selector: 'app-root',
@@ -56,7 +57,8 @@ import { PayDashComponent } from "./Paydash/pay-dash/pay-dash.component";
     LoginComponent,
     ProductSellComponent,
     DeliveryDashComponent,
-    PayDashComponent
+    PayDashComponent,
+    AdminDashComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
