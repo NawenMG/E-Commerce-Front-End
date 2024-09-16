@@ -24,6 +24,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from "./login/login.component";
 import { ProductSellComponent } from "./Product-Sell/product-sell/product-sell.component";
 import { DeliveryDashComponent } from "./Deliverydash/delivery-dash/delivery-dash.component";
+import { PayDashComponent } from "./Paydash/pay-dash/pay-dash.component";
 
 @Component({
   selector: 'app-root',
@@ -54,7 +55,8 @@ import { DeliveryDashComponent } from "./Deliverydash/delivery-dash/delivery-das
     FormsModule,
     LoginComponent,
     ProductSellComponent,
-    DeliveryDashComponent
+    DeliveryDashComponent,
+    PayDashComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
