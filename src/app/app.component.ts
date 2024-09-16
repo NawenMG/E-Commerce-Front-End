@@ -24,6 +24,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from "./login/login.component";
 import { FormsVenditaComponent } from "./venditaprodotti/forms-vendita/forms-vendita.component";
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -52,7 +53,7 @@ import { FormsVenditaComponent } from "./venditaprodotti/forms-vendita/forms-ven
     ReactiveFormsModule,
     FormsModule,
     LoginComponent,
-    FormsVenditaComponent
+    FormsVenditaComponent,
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
