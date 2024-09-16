@@ -22,6 +22,7 @@ import { InfoCredenzialiComponent } from "./Profile/info-credenziali/info-creden
 import { FormsSeriesComponent } from "./Registrazione/forms-series/forms-series.component";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from "./login/login.component";
+import { FormsvenditaComponent } from "./venditaprodotti/formsvendita/formsvendita.component";
 
 @Component({
   selector: 'app-root',
@@ -50,7 +51,8 @@ import { LoginComponent } from "./login/login.component";
     FormsSeriesComponent,
     ReactiveFormsModule,
     FormsModule,
-    LoginComponent
+    LoginComponent,
+    FormsvenditaComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
