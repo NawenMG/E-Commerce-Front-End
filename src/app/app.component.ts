@@ -26,6 +26,7 @@ import { ProductSellComponent } from "./Product-Sell/product-sell/product-sell.c
 import { DeliveryDashComponent } from "./Deliverydash/delivery-dash/delivery-dash.component";
 import { PayDashComponent } from "./Paydash/pay-dash/pay-dash.component";
 import { AdminDashComponent } from "./Admindash/admin-dash/admin-dash.component";
+import { ControllerDashComponent } from "./Controllerdash/controller-dash/controller-dash.component";
 
 @Component({
   selector: 'app-root',
@@ -58,7 +59,8 @@ import { AdminDashComponent } from "./Admindash/admin-dash/admin-dash.component"
     ProductSellComponent,
     DeliveryDashComponent,
     PayDashComponent,
-    AdminDashComponent
+    AdminDashComponent,
+    ControllerDashComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
