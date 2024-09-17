@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RatingreviewsComponent } from './ratingreviews/ratingreviews.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-cardsprodotti',
   standalone: true,
-  imports: [CommonModule, RatingreviewsComponent],
+  imports: [CommonModule, RatingreviewsComponent, RouterModule],
   templateUrl: './cardsprodotti.component.html',
   styleUrl: './cardsprodotti.component.css'
 })

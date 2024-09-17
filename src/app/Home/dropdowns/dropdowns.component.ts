@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-dropdowns',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './dropdowns.component.html',
   styleUrl: './dropdowns.component.css'
 })
@@ -51,6 +52,8 @@ export class DropdownsComponent {
       category6: ["Nome31", "Nome32", "Nome33", "Nome34", "Nome35", "Nome36"]
     }
   ]
+
+
 
 
 

@@ -103,7 +103,8 @@
        height="50"
        viewBox="0 0 40 40"
        fill="none"
-       xmlns="http://www.w3.org/2000/svg">
+       xmlns="http://www.w3.org/2000/svg"
+       routerLink="/Home">
         <path
          class="ccustom"
          fill-rule="evenodd"
@@ -144,14 +145,18 @@
        aria-label="default input example"
        id="formSearch"
        [(ngModel)]="inputSearch" >
-       <i
-       class="bi bi-search"
-       id="search"></i>
+       <a routerLink="/Paginazione">
+         <i
+         class="bi bi-search"
+         id="search">
+         </i>
+       </a>
 
       <button
        type="button"
        class="btn"
-       id="buttonCarrello">
+       id="buttonCarrello"
+       routerLink="/Profilo">
         <i
          class="bi bi-cart4"
          id="carrello"></i>
@@ -160,10 +165,11 @@
       <button
        type="button"
        class="btn"
-       id="buttonLogin">
-        <i
-         class="bi bi-box-arrow-in-right"
-         id="login"></i>
+       id="buttonLogin"
+       routerLink="/Login">
+         <i
+          class="bi bi-box-arrow-in-right"
+          id="login"></i>
       </button>
 
     </div>
