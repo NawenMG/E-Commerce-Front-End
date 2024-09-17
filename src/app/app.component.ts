@@ -27,6 +27,11 @@ import { DeliveryDashComponent } from "./Deliverydash/delivery-dash/delivery-das
 import { PayDashComponent } from "./Paydash/pay-dash/pay-dash.component";
 import { AdminDashComponent } from "./Admindash/admin-dash/admin-dash.component";
 import { ControllerDashComponent } from "./Controllerdash/controller-dash/controller-dash.component";
+import { HomeComponent } from "./Home/home/home.component";
+import { PaginazioneComponent } from "./Paginazione/paginazione/paginazione.component";
+import { ProdottoComponent } from "./Prodotto/prodotto/prodotto.component";
+import { ProfiloComponent } from "./Profile/profilo/profilo.component";
+import { RegistrazioneComponent } from "./Registrazione/registrazione/registrazione.component";
 
 @Component({
   selector: 'app-root',
@@ -60,7 +65,12 @@ import { ControllerDashComponent } from "./Controllerdash/controller-dash/contro
     DeliveryDashComponent,
     PayDashComponent,
     AdminDashComponent,
-    ControllerDashComponent
+    ControllerDashComponent,
+    HomeComponent,
+    PaginazioneComponent,
+    ProdottoComponent,
+    ProfiloComponent,
+    RegistrazioneComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
