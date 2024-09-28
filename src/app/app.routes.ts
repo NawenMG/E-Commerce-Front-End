@@ -8,8 +8,9 @@ import { PaginazioneComponent } from './Paginazione/paginazione/paginazione.comp
 import { ProductSellComponent } from './Product-Sell/product-sell/product-sell.component';
 import { ProfiloComponent } from './Profile/profilo/profilo.component';
 import { RegistrazioneComponent } from './Registrazione/registrazione/registrazione.component';
-import path from 'path';
 import { ProdottoComponent } from './Prodotto/prodotto/prodotto.component';
+import * as path from 'path'; // Se stai usando CommonJS
+
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
