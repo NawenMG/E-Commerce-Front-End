@@ -5,11 +5,12 @@ import { FiltroComponent } from "../filtro/filtro.component";
 import { CardprodottoComponent } from "../../Prodotto/cardprodotto/cardprodotto.component";
 import { CountpagComponent } from "../countpag/countpag.component";
 import { FooterComponent } from "../../Home/footer/footer.component";
+import { CardsprodottiComponent } from "../cardsprodotti/cardsprodotti.component";
 
 @Component({
   selector: 'app-paginazione',
   standalone: true,
-  imports: [HeaderComponent, DropdownsComponent, FiltroComponent, CardprodottoComponent, CountpagComponent, FooterComponent],
+  imports: [HeaderComponent, DropdownsComponent, FiltroComponent, CardprodottoComponent, CountpagComponent, FooterComponent, CardsprodottiComponent],
   templateUrl: './paginazione.component.html',
   styleUrl: './paginazione.component.css'
 })

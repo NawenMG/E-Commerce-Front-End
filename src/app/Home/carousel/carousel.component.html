@@ -7,7 +7,7 @@
   }
 
   .item1{
-    border: 3px, solid, black;
+    border: 3px solid black;
   }
 
   .immagineCarousel{
@@ -15,17 +15,14 @@
     padding-left: 5px;
   }
 
-  img{
-    width: 720px;
-    height: 370px;
-  }
+
 
 
 
 </style>
 
 
-<div id="container" routerLink="/Prodotto">
+<div id="container">
   <div class="item1">
     <div id="carouselExampleInterval"
     class="carousel slide"
@@ -38,7 +35,7 @@
           <div class="carousel-caption d-none d-md-block" [className]="immagineCarousel">
             <h5>Consigliati</h5>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit animi architecto magnam aut. Est doloribus quae voluptatem doloremque nihil voluptates nemo rerum. Molestias voluptas perferendis labore voluptate iure vero nihil?</p>
-            <button type="button" class="btn btn-primary btn-lg" style="background-color: aqua; border: none; padding-left: 5px;">Scopri di più</button>
+            <button type="button" class="btn btn-primary btn-lg" style="background-color: aqua; border: none; padding-left: 5px; margin-left: 250px;" routerLink="/Prodotto">Scopri di più</button>
           </div>
         </div>
         <div
@@ -48,7 +45,7 @@
           <div class="carousel-caption d-none d-md-block" [className]="immagineCarousel">
             <h5>Consigliati</h5>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, ea fugiat recusandae nihil quis in, totam sequi quam, doloribus nisi laboriosam quia rem non reiciendis iure odio possimus iste suscipit?</p>
-            <button type="button" class="btn btn-primary btn-lg" style="background-color: aqua; border: none; padding-left: 5px;">Scopri di più</button>
+            <button type="button" class="btn btn-primary btn-lg" style="background-color: aqua; border: none; padding-left: 5px; margin-left: 250px;" routerLink="/Prodotto">Scopri di più</button>
           </div>
         </div>
         <div class="carousel-item">
@@ -56,7 +53,7 @@
           <div class="carousel-caption d-none d-md-block" [className]="immagineCarousel">
             <h5>Consigliati</h5>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum neque tempore enim corrupti reprehenderit quaerat iste ipsa fugit optio distinctio minus perferendis rerum unde, nemo exercitationem sint! Molestiae, consequatur nemo.</p>
-            <button type="button" class="btn btn-primary btn-lg" style="background-color: aqua; border: none; padding-left: 5px;">Scopri di più</button>
+            <button type="button" class="btn btn-primary btn-lg" style="background-color: aqua; border: none; padding-left: 5px; margin-left: 250px;" routerLink="/Prodotto">Scopri di più</button>
           </div>
         </div>
       </div>
@@ -79,7 +76,7 @@
     </div>
   </div>
   <div class="item1">
-    <div id="carouselExampleInterval"
+    <div id="carouselExampleInterval2"
     class="carousel slide"
     data-bs-ride="carousel">
       <div class="carousel-inner">
@@ -90,7 +87,7 @@
           <div class="carousel-caption d-none d-md-block" [className]="immagineCarousel">
             <h5>Novità</h5>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum pariatur perferendis voluptatem itaque tempora consequuntur obcaecati aspernatur aliquid facilis impedit similique, magnam eius nisi autem asperiores cupiditate ipsam quo officia?</p>
-            <button type="button" class="btn btn-primary btn-lg" style="background-color: aqua; border: none; padding-left: 5px;">Scopri di più</button>
+            <button type="button" class="btn btn-primary btn-lg" style="background-color: aqua; border: none; padding-left: 5px; margin-left: 250px;"routerLink="/Prodotto">Scopri di più</button>
           </div>
         </div>
         <div
@@ -100,7 +97,7 @@
           <div class="carousel-caption d-none d-md-block" [className]="immagineCarousel">
             <h5>Novità</h5>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos officiis debitis velit fugit quo delectus minima officia modi! Est minus asperiores atque hic voluptates vel sapiente, ratione nesciunt qui consequuntur.</p>
-            <button type="button" class="btn btn-primary btn-lg" style="background-color: aqua; border: none; padding-left: 5px;">Scopri di più</button>
+            <button type="button" class="btn btn-primary btn-lg" style="background-color: aqua; border: none; padding-left: 5px; margin-left: 250px;"routerLink="/Prodotto">Scopri di più</button>
           </div>
         </div>
         <div class="carousel-item">
@@ -108,14 +105,14 @@
           <div class="carousel-caption d-none d-md-block" [className]="immagineCarousel">
             <h5>Novità</h5>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam labore ad esse vero eveniet molestiae tempore illum. Voluptatum id pariatur, temporibus aut ea quidem atque rem quibusdam, perspiciatis, repellendus necessitatibus?</p>
-            <button type="button" class="btn btn-primary btn-lg" style="background-color: aqua; border: none; padding-left: 5px;">Scopri di più</button>
+            <button type="button" class="btn btn-primary btn-lg" style="background-color: aqua; border: none; padding-left: 5px; margin-left: 250px;"routerLink="/Prodotto">Scopri di più</button>
           </div>
         </div>
       </div>
       <button
       class="carousel-control-prev"
       type="button"
-      data-bs-target="#carouselExampleInterval"
+      data-bs-target="#carouselExampleInterval2"
       data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
@@ -123,7 +120,7 @@
       <button
       class="carousel-control-next"
       type="button"
-      data-bs-target="#carouselExampleInterval"
+      data-bs-target="#carouselExampleInterval2"
       data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
@@ -132,7 +129,7 @@
 
   </div>
   <div class="item1">
-    <div id="carouselExampleInterval"
+    <div id="carouselExampleInterval3"
     class="carousel slide"
     data-bs-ride="carousel">
       <div class="carousel-inner">
@@ -143,7 +140,7 @@
           <div class="carousel-caption d-none d-md-block" [className]="immagineCarousel">
             <h5>Tendenza</h5>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque iste, animi, inventore vero rerum soluta qui vitae placeat consectetur architecto sit. Enim nemo animi, numquam dicta nesciunt odio tempora nobis!</p>
-            <button type="button" class="btn btn-primary btn-lg" style="background-color: aqua; border: none; padding-left: 5px;">Scopri di più</button>
+            <button type="button" class="btn btn-primary btn-lg" style="background-color: aqua; border: none; padding-left: 5px; margin-left: 250px;"routerLink="/Prodotto">Scopri di più</button>
           </div>
         </div>
         <div
@@ -153,7 +150,7 @@
           <div class="carousel-caption d-none d-md-block" [className]="immagineCarousel">
             <h5>Tendenza</h5>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, accusantium ipsum, magni error modi repellat quo laboriosam voluptate officiis, veritatis soluta. Nesciunt saepe aut recusandae reprehenderit iste at tempora exercitationem.</p>
-            <button type="button" class="btn btn-primary btn-lg" style="background-color: aqua; border: none; padding-left: 5px;">Scopri di più</button>
+            <button type="button" class="btn btn-primary btn-lg" style="background-color: aqua; border: none; padding-left: 5px; margin-left: 250px;"routerLink="/Prodotto">Scopri di più</button>
           </div>
         </div>
         <div class="carousel-item">
@@ -161,14 +158,14 @@
           <div class="carousel-caption d-none d-md-block" [className]="immagineCarousel">
             <h5>Tendenza</h5>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dicta qui ratione sit hic recusandae maiores vero nemo unde, labore, at deleniti. Ipsam saepe a et deleniti officiis omnis odio?</p>
-            <button type="button" class="btn btn-primary btn-lg" style="background-color: aqua; border: none; padding-left: 5px;">Scopri di più</button>
+            <button type="button" class="btn btn-primary btn-lg" style="background-color: aqua; border: none; padding-left: 5px; margin-left: 250px;"routerLink="/Prodotto">Scopri di più</button>
           </div>
         </div>
       </div>
       <button
       class="carousel-control-prev"
       type="button"
-      data-bs-target="#carouselExampleInterval"
+      data-bs-target="#carouselExampleInterval3"
       data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
@@ -176,7 +173,7 @@
       <button
       class="carousel-control-next"
       type="button"
-      data-bs-target="#carouselExampleInterval"
+      data-bs-target="#carouselExampleInterval3"
       data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
@@ -184,7 +181,7 @@
     </div>
   </div>
   <div class="item1">
-    <div id="carouselExampleInterval"
+    <div id="carouselExampleInterval4"
     class="carousel slide"
     data-bs-ride="carousel">
       <div class="carousel-inner">
@@ -195,7 +192,7 @@
           <div class="carousel-caption d-none d-md-block" [className]="immagineCarousel">
             <h5>Ultimi prodotti visitati</h5>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid quis veniam quo culpa! Ab hic quo inventore sed molestiae. Accusantium voluptatum officia ea, eveniet et nulla tempora tempore fugit amet.</p>
-            <button type="button" class="btn btn-primary btn-lg" style="background-color: aqua; border: none; padding-left: 5px;">Scopri di più</button>
+            <button type="button" class="btn btn-primary btn-lg" style="background-color: aqua; border: none; padding-left: 5px; margin-left: 250px;"routerLink="/Prodotto">Scopri di più</button>
           </div>
         </div>
         <div
@@ -205,7 +202,7 @@
           <div class="carousel-caption d-none d-md-block" [className]="immagineCarousel">
             <h5>Ultimi prodotti visitati</h5>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore minima rem deleniti qui maiores quis cum? Voluptate asperiores temporibus inventore. Nobis inventore doloribus aliquam fugiat ipsa explicabo possimus accusantium amet?</p>
-            <button type="button" class="btn btn-primary btn-lg" style="background-color: aqua; border: none; padding-left: 5px;">Scopri di più</button>
+            <button type="button" class="btn btn-primary btn-lg" style="background-color: aqua; border: none; padding-left: 5px; margin-left: 250px;"routerLink="/Prodotto">Scopri di più</button>
           </div>
         </div>
         <div class="carousel-item">
@@ -213,14 +210,14 @@
           <div class="carousel-caption d-none d-md-block" [className]="immagineCarousel">
             <h5>Ultimi prodotti visitati</h5>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam sapiente quae nisi porro sit itaque, modi ipsa perferendis doloremque voluptates. Officiis facere hic sunt eum laudantium dicta doloremque et assumenda.</p>
-            <button type="button" class="btn btn-primary btn-lg" style="background-color: aqua; border: none; padding-left: 5px;">Scopri di più</button>
+            <button type="button" class="btn btn-primary btn-lg" style="background-color: aqua; border: none; padding-left: 5px; margin-left: 250px;"routerLink="/Prodotto">Scopri di più</button>
           </div>
         </div>
       </div>
       <button
       class="carousel-control-prev"
       type="button"
-      data-bs-target="#carouselExampleInterval"
+      data-bs-target="#carouselExampleInterval4"
       data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
@@ -228,7 +225,7 @@
       <button
       class="carousel-control-next"
       type="button"
-      data-bs-target="#carouselExampleInterval"
+      data-bs-target="#carouselExampleInterval4"
       data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
