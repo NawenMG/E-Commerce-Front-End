@@ -10,6 +10,7 @@ import { ProfiloComponent } from './Profile/profilo/profilo.component';
 import { RegistrazioneComponent } from './Registrazione/registrazione/registrazione.component';
 import { ProdottoComponent } from './Prodotto/prodotto/prodotto.component';
 import * as path from 'path'; // Se stai usando CommonJS
+import { PayDashComponent } from './Paydash/pay-dash/pay-dash.component';
 
 
 export const routes: Routes = [
@@ -23,6 +24,7 @@ export const routes: Routes = [
   {path: 'Admin', component: AdminDashComponent},
   {path: 'Controller', component: ControllerDashComponent},
   {path: 'Delivery', component: DeliveryDashComponent},
+  {path: 'Pay', component: PayDashComponent},
   {path: 'Sell', component: ProductSellComponent},
   {path: '**', component: HomeComponent}
 ];

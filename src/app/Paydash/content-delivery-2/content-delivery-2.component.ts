@@ -16,7 +16,7 @@ export class ContentDelivery2Component {
 
   // Funzione per aggiungere una nuova riga
   addRow() {
-    this.rows.push({ info1: 'Informazione', info2: 'Informazione', info3: 'Informazione' });
+    this.rows.push({ info1: 'Informazione', info2: 'Informazione', info3: 'Informazione' }); //n riga
   }
 
 }
