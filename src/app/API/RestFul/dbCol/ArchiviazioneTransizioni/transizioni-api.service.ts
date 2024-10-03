@@ -13,17 +13,17 @@ export class TransizioniApiService {
   constructor() { }
 
   //POST
-  createUser(transizione: any) {
+  create(transizione: any) {
     return axios.post(this.apiUrlInsert, transizione).then(response => response.data);
   }
 
   //PUT
-  updateUser(transizione:any) {
+  update(transizione:any) {
     return axios.put(this.apiUrlUpdate, transizione).then(response => response.data);
   }
 
   //DELETE
-  deleteUser(id: number) {
+  delete(id: number) {
     return axios.delete(`${this.apiUrlDelete}/${id}`).then(response => response.data);
   }
 }

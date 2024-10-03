@@ -13,17 +13,17 @@ export class SegnalazioniApiService {
   constructor() { }
 
   //POST
-  createUser(segnalazione: any) {
+  create(segnalazione: any) {
     return axios.post(this.apiUrlInsert, segnalazione).then(response => response.data);
   }
 
   //PUT
-  updateUser(segnalazione:any) {
+  update(segnalazione:any) {
     return axios.put(this.apiUrlUpdate, segnalazione).then(response => response.data);
   }
 
   //DELETE
-  deleteUser(id: number) {
+  delete(id: number) {
     return axios.delete(`${this.apiUrlDelete}/${id}`).then(response => response.data);
   }
 

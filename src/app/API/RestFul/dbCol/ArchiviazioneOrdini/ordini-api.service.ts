@@ -15,17 +15,17 @@ export class OrdiniAPIService {
   constructor() { }
 
   //POST
-  createUser(ordine: any) {
+  create(ordine: any) {
     return axios.post(this.apiUrlInsert, ordine).then(response => response.data);
   }
 
   //PUT
-  updateUser(ordine:any) {
+  update(ordine:any) {
     return axios.put(this.apiUrlUpdate, ordine).then(response => response.data);
   }
 
   //DELETE
-  deleteUser(id: number) {
+  delete(id: number) {
     return axios.delete(`${this.apiUrlDelete}/${id}`).then(response => response.data);
   }
 
