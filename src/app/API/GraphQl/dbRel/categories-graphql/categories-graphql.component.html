@@ -1,0 +1,36 @@
+<form [formGroup]="categoriesForm" (ngSubmit)="fetchCategories()">
+  <div>
+    <label for="categoriesID">Categories ID:</label>
+    <input type="number" id="categoriesID" formControlName="categoriesID" />
+  </div>
+
+  <div>
+    <label for="name">Category Name:</label>
+    <input type="text" id="name" formControlName="name" />
+  </div>
+
+  <div>
+    <label for="limit">Limit:</label>
+    <input type="number" id="limit" formControlName="limit" />
+  </div>
+
+  <div>
+    <label for="offset">Offset:</label>
+    <input type="number" id="offset" formControlName="offset" />
+  </div>
+
+  <button type="submit">Fetch Categories</button>
+</form>
+
+<!-- Visualizza gli elementi delle categorie -->
+<div *ngIf="items.length">
+  <h2>Categories</h2>
+  <ul>
+    <li *ngFor="let item of items">
+      Categories ID: {{ item.categoriesID }}, Name: {{ item.name }}
+    </li>
+  </ul>
+</div>
+
+<!-- Mostra messaggi di errore -->
+<div *ngIf="error">{{ error }}</div>

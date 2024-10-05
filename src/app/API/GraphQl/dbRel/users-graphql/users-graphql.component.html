@@ -1,0 +1,65 @@
+<form [formGroup]="usersForm" (ngSubmit)="fetchUsers()">
+  <div>
+    <label for="usersID">User ID:</label>
+    <input type="number" id="usersID" formControlName="usersID" />
+  </div>
+
+  <div>
+    <label for="nome">Name:</label>
+    <input type="text" id="nome" formControlName="nome" />
+  </div>
+
+  <div>
+    <label for="cognome">Surname:</label>
+    <input type="text" id="cognome" formControlName="cognome" />
+  </div>
+
+  <div>
+    <label for="ruolo">Role:</label>
+    <input type="text" id="ruolo" formControlName="ruolo" />
+  </div>
+
+  <div>
+    <label for="nomeUtente">Username:</label>
+    <input type="text" id="nomeUtente" formControlName="nomeUtente" />
+  </div>
+
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" formControlName="email" />
+  </div>
+
+  <div>
+    <label for="category">Category:</label>
+    <input type="number" id="category" formControlName="category" />
+  </div>
+
+  <div>
+    <label for="limit">Limit:</label>
+    <input type="number" id="limit" formControlName="limit" />
+  </div>
+
+  <div>
+    <label for="offset">Offset:</label>
+    <input type="number" id="offset" formControlName="offset" />
+  </div>
+
+  <button type="submit">Fetch Users</button>
+</form>
+
+<!-- Visualizza gli elementi degli utenti -->
+<div *ngIf="items.length">
+  <h2>Users</h2>
+  <ul>
+    <li *ngFor="let item of items">
+      User ID: {{ item.usersID }}, Name: {{ item.nome }},
+      Surname: {{ item.cognome }}, Role: {{ item.ruolo }},
+      Username: {{ item.nomeUtente }}, Email: {{ item.email }},
+      Image: <img [src]="item.immagine" alt="{{ item.nome }} {{ item.cognome }}" />
+      Category: {{ item.category }}
+    </li>
+  </ul>
+</div>
+
+<!-- Mostra messaggi di errore -->
+<div *ngIf="error">{{ error }}</div>

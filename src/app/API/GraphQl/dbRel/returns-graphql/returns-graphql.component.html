@@ -1,0 +1,53 @@
+<form [formGroup]="returnsForm" (ngSubmit)="fetchReturns()">
+  <div>
+    <label for="returnsID">Returns ID:</label>
+    <input type="number" id="returnsID" formControlName="returnsID" />
+  </div>
+
+  <div>
+    <label for="usersID">User ID:</label>
+    <input type="number" id="usersID" formControlName="usersID" />
+  </div>
+
+  <div>
+    <label for="status">Status:</label>
+    <input type="checkbox" id="status" formControlName="status" />
+  </div>
+
+  <div>
+    <label for="accettazioneReso">Accettazione Reso:</label>
+    <input type="checkbox" id="accettazioneReso" formControlName="accettazioneReso" />
+  </div>
+
+  <div>
+    <label for="dataRichiesta">Request Date:</label>
+    <input type="text" id="dataRichiesta" formControlName="dataRichiesta" />
+  </div>
+
+  <div>
+    <label for="limit">Limit:</label>
+    <input type="number" id="limit" formControlName="limit" />
+  </div>
+
+  <div>
+    <label for="offset">Offset:</label>
+    <input type="number" id="offset" formControlName="offset" />
+  </div>
+
+  <button type="submit">Fetch Returns</button>
+</form>
+
+<!-- Visualizza gli elementi dei resi -->
+<div *ngIf="items.length">
+  <h2>Returns</h2>
+  <ul>
+    <li *ngFor="let item of items">
+      Returns ID: {{ item.returnsID }}, User ID: {{ item.usersID }},
+      Status: {{ item.status }}, Accettazione Reso: {{ item.accettazioneReso }},
+      Request Date: {{ item.dataRichiesta }}
+    </li>
+  </ul>
+</div>
+
+<!-- Mostra messaggi di errore -->
+<div *ngIf="error">{{ error }}</div>

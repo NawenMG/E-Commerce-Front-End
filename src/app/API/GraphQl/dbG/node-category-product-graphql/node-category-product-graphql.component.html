@@ -1,0 +1,36 @@
+<form [formGroup]="nodeCategoryProductForm" (ngSubmit)="fetchNodeCategoryProduct()">
+  <div>
+    <label for="categoryId">Category ID:</label>
+    <input type="text" id="categoryId" formControlName="categoryId" />
+  </div>
+
+  <div>
+    <label for="categoryName">Category Name:</label>
+    <input type="text" id="categoryName" formControlName="categoryName" />
+  </div>
+
+  <div>
+    <label for="limit">Limit:</label>
+    <input type="number" id="limit" formControlName="limit" />
+  </div>
+
+  <div>
+    <label for="skip">Skip:</label>
+    <input type="number" id="skip" formControlName="skip" />
+  </div>
+
+  <button type="submit">Fetch Categories</button>
+</form>
+
+<!-- Visualizza le categorie -->
+<div *ngIf="categories.length">
+  <h2>Categories</h2>
+  <ul>
+    <li *ngFor="let category of categories">
+      ID: {{ category.categoryId }}, Name: {{ category.categoryName }}
+    </li>
+  </ul>
+</div>
+
+<!-- Mostra messaggi di errore -->
+<div *ngIf="error">{{ error }}</div>

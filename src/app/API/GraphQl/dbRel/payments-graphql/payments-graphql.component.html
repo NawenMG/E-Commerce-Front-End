@@ -1,0 +1,53 @@
+<form [formGroup]="paymentsForm" (ngSubmit)="fetchPayments()">
+  <div>
+    <label for="paymentsID">Payments ID:</label>
+    <input type="number" id="paymentsID" formControlName="paymentsID" />
+  </div>
+
+  <div>
+    <label for="type">Type:</label>
+    <input type="text" id="type" formControlName="type" />
+  </div>
+
+  <div>
+    <label for="data">Data:</label>
+    <input type="text" id="data" formControlName="data" />
+  </div>
+
+  <div>
+    <label for="status">Status:</label>
+    <input type="checkbox" id="status" formControlName="status" />
+  </div>
+
+  <div>
+    <label for="total">Total:</label>
+    <input type="number" id="total" formControlName="total" />
+  </div>
+
+  <div>
+    <label for="limit">Limit:</label>
+    <input type="number" id="limit" formControlName="limit" />
+  </div>
+
+  <div>
+    <label for="offset">Offset:</label>
+    <input type="number" id="offset" formControlName="offset" />
+  </div>
+
+  <button type="submit">Fetch Payments</button>
+</form>
+
+<!-- Visualizza gli elementi dei pagamenti -->
+<div *ngIf="items.length">
+  <h2>Payments</h2>
+  <ul>
+    <li *ngFor="let item of items">
+      Payments ID: {{ item.paymentsID }}, Type: {{ item.type }},
+      Data: {{ item.data }}, Status: {{ item.status }},
+      Total: {{ item.total }}
+    </li>
+  </ul>
+</div>
+
+<!-- Mostra messaggi di errore -->
+<div *ngIf="error">{{ error }}</div>

@@ -1,0 +1,61 @@
+<form [formGroup]="orderForm" (ngSubmit)="fetchOrders()">
+  <div>
+    <label for="distinct">Distinct:</label>
+    <input type="checkbox" id="distinct" formControlName="distinct" />
+  </div>
+
+  <div>
+    <label for="limit">Limit:</label>
+    <input type="number" id="limit" formControlName="limit" />
+  </div>
+
+  <div>
+    <label for="offset">Offset:</label>
+    <input type="number" id="offset" formControlName="offset" />
+  </div>
+
+  <div>
+    <label for="userID">User ID:</label>
+    <input type="number" id="userID" formControlName="userID" />
+  </div>
+
+  <div>
+    <label for="status">Status:</label>
+    <input type="text" id="status" formControlName="status" />
+  </div>
+
+  <div>
+    <label for="orderDateFrom">Order Date From:</label>
+    <input type="date" id="orderDateFrom" formControlName="orderDateFrom" />
+  </div>
+
+  <div>
+    <label for="orderDateTo">Order Date To:</label>
+    <input type="date" id="orderDateTo" formControlName="orderDateTo" />
+  </div>
+
+  <div>
+    <label for="totalImportMin">Total Import Min:</label>
+    <input type="number" id="totalImportMin" formControlName="totalImportMin" />
+  </div>
+
+  <div>
+    <label for="totalImportMax">Total Import Max:</label>
+    <input type="number" id="totalImportMax" formControlName="totalImportMax" />
+  </div>
+
+  <button type="submit">Fetch Orders</button>
+</form>
+
+<!-- Visualizza gli ordini -->
+<div *ngIf="orders.length">
+  <h2>Ordini</h2>
+  <ul>
+    <li *ngFor="let order of orders">
+      ID: {{ order.id }}, UserID: {{ order.userID }}, Total Import: {{ order.totalImport }}
+    </li>
+  </ul>
+</div>
+
+<!-- Mostra messaggi di errore -->
+<div *ngIf="error">{{ error }}</div>

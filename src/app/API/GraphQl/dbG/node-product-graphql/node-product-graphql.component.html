@@ -1,0 +1,41 @@
+<form [formGroup]="nodeProductForm" (ngSubmit)="fetchNodeProduct()">
+  <div>
+    <label for="productId">Product ID:</label>
+    <input type="text" id="productId" formControlName="productId" />
+  </div>
+
+  <div>
+    <label for="name">Product Name:</label>
+    <input type="text" id="name" formControlName="name" />
+  </div>
+
+  <div>
+    <label for="price">Price:</label>
+    <input type="number" id="price" formControlName="price" />
+  </div>
+
+  <div>
+    <label for="limit">Limit:</label>
+    <input type="number" id="limit" formControlName="limit" />
+  </div>
+
+  <div>
+    <label for="skip">Skip:</label>
+    <input type="number" id="skip" formControlName="skip" />
+  </div>
+
+  <button type="submit">Fetch Products</button>
+</form>
+
+<!-- Visualizza i prodotti -->
+<div *ngIf="products.length">
+  <h2>Products</h2>
+  <ul>
+    <li *ngFor="let product of products">
+      ID: {{ product.productId }}, Name: {{ product.name }}, Price: {{ product.price }}, Category: {{ product.category?.categoryName }}
+    </li>
+  </ul>
+</div>
+
+<!-- Mostra messaggi di errore -->
+<div *ngIf="error">{{ error }}</div>

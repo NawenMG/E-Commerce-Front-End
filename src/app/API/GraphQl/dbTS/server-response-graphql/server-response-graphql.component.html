@@ -1,0 +1,76 @@
+<form [formGroup]="serverResponseForm" (ngSubmit)="fetchServerResponses()">
+  <div>
+    <label for="server">Server:</label>
+    <input type="text" id="server" formControlName="server" />
+  </div>
+
+  <div>
+    <label for="endpoint">Endpoint:</label>
+    <input type="text" id="endpoint" formControlName="endpoint" />
+  </div>
+
+  <div>
+    <label for="responseTimeAverage">Average Response Time:</label>
+    <input type="number" id="responseTimeAverage" formControlName="responseTimeAverage" />
+  </div>
+
+  <div>
+    <label for="requestNumbers">Number of Requests:</label>
+    <input type="number" id="requestNumbers" formControlName="requestNumbers" />
+  </div>
+
+  <div>
+    <label for="errorsNumbers">Number of Errors:</label>
+    <input type="number" id="errorsNumbers" formControlName="errorsNumbers" />
+  </div>
+
+  <div>
+    <label for="timeStamp">Timestamp:</label>
+    <input type="text" id="timeStamp" formControlName="timeStamp" />
+  </div>
+
+  <div>
+    <label for="measurement">Measurement:</label>
+    <input type="text" id="measurement" formControlName="measurement" />
+  </div>
+
+  <div>
+    <label for="timeRangeStart">Time Range Start:</label>
+    <input type="text" id="timeRangeStart" formControlName="timeRangeStart" />
+  </div>
+
+  <div>
+    <label for="timeRangeEnd">Time Range End:</label>
+    <input type="text" id="timeRangeEnd" formControlName="timeRangeEnd" />
+  </div>
+
+  <div>
+    <label for="limit">Limit:</label>
+    <input type="number" id="limit" formControlName="limit" />
+  </div>
+
+  <div>
+    <label for="offset">Offset:</label>
+    <input type="number" id="offset" formControlName="offset" />
+  </div>
+
+  <button type="submit">Fetch Server Responses</button>
+</form>
+
+<!-- Visualizza i risultati -->
+<div *ngIf="items.length">
+  <h2>Server Response Results</h2>
+  <ul>
+    <li *ngFor="let response of items">
+      <h3>Server: {{ response.server }}</h3>
+      <p>Endpoint: {{ response.endpoint }}</p>
+      <p>Average Response Time: {{ response.responseTimeAverage }} ms</p>
+      <p>Number of Requests: {{ response.requestNumbers }}</p>
+      <p>Number of Errors: {{ response.errorsNumbers }}</p>
+      <p>Timestamp: {{ response.timeStamp }}</p>
+    </li>
+  </ul>
+</div>
+
+<!-- Mostra messaggi di errore -->
+<div *ngIf="error">{{ error }}</div>

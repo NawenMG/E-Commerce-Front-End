@@ -1,0 +1,70 @@
+<form [formGroup]="analysisForm" (ngSubmit)="fetchAnalysisTraffic()">
+  <div>
+    <label for="url">URL:</label>
+    <input type="text" id="url" formControlName="url" />
+  </div>
+
+  <div>
+    <label for="numeroVisite">Number of Visits:</label>
+    <input type="number" id="numeroVisite" formControlName="numeroVisite" />
+  </div>
+
+  <div>
+    <label for="numeroVisiteUniche">Unique Visits:</label>
+    <input type="number" id="numeroVisiteUniche" formControlName="numeroVisiteUniche" />
+  </div>
+
+  <div>
+    <label for="durataMediaVisite">Average Visit Duration:</label>
+    <input type="number" id="durataMediaVisite" formControlName="durataMediaVisite" step="0.1" />
+  </div>
+
+  <div>
+    <label for="timeStamp">Timestamp:</label>
+    <input type="text" id="timeStamp" formControlName="timeStamp" />
+  </div>
+
+  <div>
+    <label for="measurement">Measurement:</label>
+    <input type="text" id="measurement" formControlName="measurement" />
+  </div>
+
+  <div>
+    <label for="timeRangeStart">Time Range Start:</label>
+    <input type="text" id="timeRangeStart" formControlName="timeRangeStart" />
+  </div>
+
+  <div>
+    <label for="timeRangeEnd">Time Range End:</label>
+    <input type="text" id="timeRangeEnd" formControlName="timeRangeEnd" />
+  </div>
+
+  <div>
+    <label for="limit">Limit:</label>
+    <input type="number" id="limit" formControlName="limit" />
+  </div>
+
+  <div>
+    <label for="offset">Offset:</label>
+    <input type="number" id="offset" formControlName="offset" />
+  </div>
+
+  <button type="submit">Fetch Analysis Traffic</button>
+</form>
+
+<!-- Visualizza i risultati -->
+<div *ngIf="items.length">
+  <h2>Analysis Traffic Results</h2>
+  <ul>
+    <li *ngFor="let analysis of items">
+      <h3>URL: {{ analysis.url }}</h3>
+      <p>Number of Visits: {{ analysis.numeroVisite }}</p>
+      <p>Unique Visits: {{ analysis.numeroVisiteUniche }}</p>
+      <p>Average Visit Duration: {{ analysis.durataMediaVisite }}</p>
+      <p>Time Stamp: {{ analysis.timeStamp }}</p>
+    </li>
+  </ul>
+</div>
+
+<!-- Mostra messaggi di errore -->
+<div *ngIf="error">{{ error }}</div>

@@ -1,0 +1,53 @@
+<form [formGroup]="notificaForm" (ngSubmit)="fetchNotifiche()">
+  <div>
+    <label for="notificaID">Notification ID:</label>
+    <input type="number" id="notificaID" formControlName="notificaID" />
+  </div>
+
+  <div>
+    <label for="destinatario">Recipient:</label>
+    <input type="text" id="destinatario" formControlName="destinatario" />
+  </div>
+
+  <div>
+    <label for="visualizzazione">Visible:</label>
+    <input type="checkbox" id="visualizzazione" formControlName="visualizzazione" />
+  </div>
+
+  <div>
+    <label for="consegna">Delivered:</label>
+    <input type="checkbox" id="consegna" formControlName="consegna" />
+  </div>
+
+  <div>
+    <label for="limit">Limit:</label>
+    <input type="number" id="limit" formControlName="limit" />
+  </div>
+
+  <div>
+    <label for="offset">Offset:</label>
+    <input type="number" id="offset" formControlName="offset" />
+  </div>
+
+  <button type="submit">Fetch Notifications</button>
+</form>
+
+<!-- Visualizza le notifiche -->
+<div *ngIf="items.length">
+  <h2>Notifications</h2>
+  <ul>
+    <li *ngFor="let notifica of items">
+      <h3>Notification ID: {{ notifica.notificaID }}</h3>
+      <p>Text: {{ notifica.text }}</p>
+      <p>Recipient: {{ notifica.destinatario }}</p>
+      <p>Delivery: {{ notifica.consegna ? 'Yes' : 'No' }}</p>
+      <p>Visible: {{ notifica.visualizzazione ? 'Yes' : 'No' }}</p>
+      <p *ngIf="notifica.audio">Audio: <a [href]="notifica.audio">Listen</a></p>
+      <p *ngIf="notifica.immagine">Image: <img [src]="notifica.immagine" alt="Image notification" /></p>
+      <p *ngIf="notifica.video">Video: <a [href]="notifica.video">Watch</a></p>
+    </li>
+  </ul>
+</div>
+
+<!-- Mostra messaggi di errore -->
+<div *ngIf="error">{{ error }}</div>

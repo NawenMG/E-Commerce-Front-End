@@ -1,0 +1,56 @@
+<form [formGroup]="segnalazioniForm" (ngSubmit)="fetchSegnalazioni()">
+  <div>
+    <label for="id">ID:</label>
+    <input type="number" id="id" formControlName="id" />
+  </div>
+
+  <div>
+    <label for="utente">Utente:</label>
+    <input type="text" id="utente" formControlName="utente" />
+  </div>
+
+  <div>
+    <label for="riferimento">Riferimento:</label>
+    <input type="text" id="riferimento" formControlName="riferimento" />
+  </div>
+
+  <div>
+    <label for="dataFrom">Data Da:</label>
+    <input type="date" id="dataFrom" formControlName="dataFrom" />
+  </div>
+
+  <div>
+    <label for="dataTo">Data A:</label>
+    <input type="date" id="dataTo" formControlName="dataTo" />
+  </div>
+
+  <div>
+    <label for="title">Title:</label>
+    <input type="text" id="title" formControlName="title" />
+  </div>
+
+  <div>
+    <label for="limit">Limit:</label>
+    <input type="number" id="limit" formControlName="limit" />
+  </div>
+
+  <div>
+    <label for="offset">Offset:</label>
+    <input type="number" id="offset" formControlName="offset" />
+  </div>
+
+  <button type="submit">Fetch Segnalazioni</button>
+</form>
+
+<!-- Visualizza le segnalazioni -->
+<div *ngIf="segnalazioni.length">
+  <h2>Segnalazioni</h2>
+  <ul>
+    <li *ngFor="let segnalazione of segnalazioni">
+      ID: {{ segnalazione.id }}, Utente: {{ segnalazione.utente }}, Title: {{ segnalazione.title }}
+    </li>
+  </ul>
+</div>
+
+<!-- Mostra messaggi di errore -->
+<div *ngIf="error">{{ error }}</div>

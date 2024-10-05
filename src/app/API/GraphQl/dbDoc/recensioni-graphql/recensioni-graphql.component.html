@@ -1,0 +1,66 @@
+<form [formGroup]="recensioniForm" (ngSubmit)="fetchRecensioni()">
+  <div>
+    <label for="idReview">ID Recensione:</label>
+    <input type="number" id="idReview" formControlName="idReview" />
+  </div>
+
+  <div>
+    <label for="titolo">Titolo:</label>
+    <input type="text" id="titolo" formControlName="titolo" />
+  </div>
+
+  <div>
+    <label for="rate">Rating:</label>
+    <input type="number" id="rate" formControlName="rate" />
+  </div>
+
+  <div>
+    <label for="verificadellAcquisto">Verificato dell'Acquisto:</label>
+    <input type="checkbox" id="verificadellAcquisto" formControlName="verificadellAcquisto" />
+  </div>
+
+  <div>
+    <label for="like">Like:</label>
+    <input type="checkbox" id="like" formControlName="like" />
+  </div>
+
+  <div>
+    <label for="dislike">Dislike:</label>
+    <input type="checkbox" id="dislike" formControlName="dislike" />
+  </div>
+
+  <div>
+    <label for="tags">Tags (separati da virgola):</label>
+    <input type="text" id="tags" formControlName="tags" />
+  </div>
+
+  <div>
+    <label for="limit">Limit:</label>
+    <input type="number" id="limit" formControlName="limit" />
+  </div>
+
+  <div>
+    <label for="offset">Offset:</label>
+    <input type="number" id="offset" formControlName="offset" />
+  </div>
+
+  <button type="submit">Fetch Recensioni</button>
+</form>
+
+<!-- Visualizza le recensioni -->
+<div *ngIf="recensioni.length">
+  <h2>Recensioni</h2>
+  <ul>
+    <li *ngFor="let recensione of recensioni">
+      ID: {{ recensione.idReview }}, Titolo: {{ recensione.titolo }}, Rating: {{ recensione.rate }}
+      <div *ngIf="recensione.body">Commento: {{ recensione.body }}</div>
+      <div>Verificato: {{ recensione.verificadellAcquisto ? 'Sì' : 'No' }}</div>
+      <div>Like: {{ recensione.like ? 'Sì' : 'No' }}</div>
+      <div>Dislike: {{ recensione.dislike ? 'Sì' : 'No' }}</div>
+      <div>Tags: {{ recensione.tags.join(', ') }}</div>
+    </li>
+  </ul>
+</div>
+
+<!-- Mostra messaggi di errore -->
+<div *ngIf="error">{{ error }}</div>

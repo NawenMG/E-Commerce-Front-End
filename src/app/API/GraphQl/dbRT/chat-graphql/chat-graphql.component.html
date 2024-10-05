@@ -1,0 +1,59 @@
+<form [formGroup]="chatForm" (ngSubmit)="fetchChats()">
+  <div>
+    <label for="conversazioneID">Conversation ID:</label>
+    <input type="number" id="conversazioneID" formControlName="conversazioneID" />
+  </div>
+
+  <div>
+    <label for="mutaConversazione">Mute Conversation:</label>
+    <input type="checkbox" id="mutaConversazione" formControlName="mutaConversazione" />
+  </div>
+
+  <div>
+    <label for="bloccoConversazione">Block Conversation:</label>
+    <input type="checkbox" id="bloccoConversazione" formControlName="bloccoConversazione" />
+  </div>
+
+  <div>
+    <label for="users">Users (comma separated):</label>
+    <input type="text" id="users" formControlName="users" placeholder="user1, user2" />
+  </div>
+
+  <div>
+    <label for="limit">Limit:</label>
+    <input type="number" id="limit" formControlName="limit" />
+  </div>
+
+  <div>
+    <label for="offset">Offset:</label>
+    <input type="number" id="offset" formControlName="offset" />
+  </div>
+
+  <button type="submit">Fetch Chats</button>
+</form>
+
+<!-- Visualizza le conversazioni -->
+<div *ngIf="items.length">
+  <h2>Chat Conversations</h2>
+  <ul>
+    <li *ngFor="let chat of items">
+      <h3>Conversation ID: {{ chat.conversazioneID }}</h3>
+      <p>Mute: {{ chat.mutaConversazione }}</p>
+      <p>Block: {{ chat.bloccoConversazione }}</p>
+      <p>Users: {{ chat.users.join(', ') }}</p>
+      <ul>
+        <li *ngFor="let message of chat.messaggi">
+          <strong>Sender:</strong> {{ message.mittente }}<br>
+          <strong>Text:</strong> {{ message.text }}<br>
+          <strong>Timestamp:</strong> {{ message.timeStamp }}<br>
+          <strong>Audio:</strong> <a *ngIf="message.audio" [href]="message.audio">Listen</a><br>
+          <strong>Image:</strong> <img *ngIf="message.immagine" [src]="message.immagine" alt="Image message" /><br>
+          <strong>Video:</strong> <a *ngIf="message.video" [href]="message.video">Watch</a><br>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<!-- Mostra messaggi di errore -->
+<div *ngIf="error">{{ error }}</div>

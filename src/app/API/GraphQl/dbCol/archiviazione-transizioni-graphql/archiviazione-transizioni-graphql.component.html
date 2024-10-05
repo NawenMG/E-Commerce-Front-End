@@ -1,0 +1,66 @@
+<form [formGroup]="transizioniForm" (ngSubmit)="fetchTransizioni()">
+  <div>
+    <label for="id">ID:</label>
+    <input type="number" id="id" formControlName="id" />
+  </div>
+
+  <div>
+    <label for="orderID">Order ID:</label>
+    <input type="number" id="orderID" formControlName="orderID" />
+  </div>
+
+  <div>
+    <label for="totalImportMin">Total Import Min:</label>
+    <input type="number" id="totalImportMin" formControlName="totalImportMin" />
+  </div>
+
+  <div>
+    <label for="totalImportMax">Total Import Max:</label>
+    <input type="number" id="totalImportMax" formControlName="totalImportMax" />
+  </div>
+
+  <div>
+    <label for="dataFrom">Data Da:</label>
+    <input type="date" id="dataFrom" formControlName="dataFrom" />
+  </div>
+
+  <div>
+    <label for="dataTo">Data A:</label>
+    <input type="date" id="dataTo" formControlName="dataTo" />
+  </div>
+
+  <div>
+    <label for="metodoDiPagamento">Metodo di Pagamento:</label>
+    <input type="text" id="metodoDiPagamento" formControlName="metodoDiPagamento" />
+  </div>
+
+  <div>
+    <label for="status">Status:</label>
+    <input type="text" id="status" formControlName="status" />
+  </div>
+
+  <div>
+    <label for="limit">Limit:</label>
+    <input type="number" id="limit" formControlName="limit" />
+  </div>
+
+  <div>
+    <label for="offset">Offset:</label>
+    <input type="number" id="offset" formControlName="offset" />
+  </div>
+
+  <button type="submit">Fetch Transizioni</button>
+</form>
+
+<!-- Visualizza le transizioni -->
+<div *ngIf="transizioni.length">
+  <h2>Transizioni</h2>
+  <ul>
+    <li *ngFor="let transizione of transizioni">
+      ID: {{ transizione.id }}, OrderID: {{ transizione.orderID }}, Total Import: {{ transizione.totalImport }}
+    </li>
+  </ul>
+</div>
+
+<!-- Mostra messaggi di errore -->
+<div *ngIf="error">{{ error }}</div>

@@ -1,0 +1,70 @@
+<form [formGroup]="analysisForm" (ngSubmit)="fetchAnalysisUser()">
+  <div>
+    <label for="user">User:</label>
+    <input type="text" id="user" formControlName="user" />
+  </div>
+
+  <div>
+    <label for="typeDevice">Device Type:</label>
+    <input type="text" id="typeDevice" formControlName="typeDevice" />
+  </div>
+
+  <div>
+    <label for="action">Action:</label>
+    <input type="text" id="action" formControlName="action" />
+  </div>
+
+  <div>
+    <label for="duringAction">During Action (seconds):</label>
+    <input type="number" id="duringAction" formControlName="duringAction" />
+  </div>
+
+  <div>
+    <label for="timestamp">Timestamp:</label>
+    <input type="text" id="timestamp" formControlName="timestamp" />
+  </div>
+
+  <div>
+    <label for="measurement">Measurement:</label>
+    <input type="text" id="measurement" formControlName="measurement" />
+  </div>
+
+  <div>
+    <label for="timeRangeStart">Time Range Start:</label>
+    <input type="text" id="timeRangeStart" formControlName="timeRangeStart" />
+  </div>
+
+  <div>
+    <label for="timeRangeEnd">Time Range End:</label>
+    <input type="text" id="timeRangeEnd" formControlName="timeRangeEnd" />
+  </div>
+
+  <div>
+    <label for="limit">Limit:</label>
+    <input type="number" id="limit" formControlName="limit" />
+  </div>
+
+  <div>
+    <label for="offset">Offset:</label>
+    <input type="number" id="offset" formControlName="offset" />
+  </div>
+
+  <button type="submit">Fetch Analysis User</button>
+</form>
+
+<!-- Visualizza i risultati -->
+<div *ngIf="items.length">
+  <h2>Analysis User Results</h2>
+  <ul>
+    <li *ngFor="let analysis of items">
+      <h3>User: {{ analysis.user }}</h3>
+      <p>Device Type: {{ analysis.typeDevice }}</p>
+      <p>Action: {{ analysis.action }}</p>
+      <p>During Action: {{ analysis.duringAction }} seconds</p>
+      <p>Timestamp: {{ analysis.timestamp }}</p>
+    </li>
+  </ul>
+</div>
+
+<!-- Mostra messaggi di errore -->
+<div *ngIf="error">{{ error }}</div>

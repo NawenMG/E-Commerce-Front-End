@@ -1,0 +1,59 @@
+<form [formGroup]="settingsForm" (ngSubmit)="fetchSettings()">
+  <div>
+    <label for="userID">User ID:</label>
+    <input type="number" id="userID" formControlName="userID" />
+  </div>
+
+  <div>
+    <label for="settingID">Setting ID:</label>
+    <input type="number" id="settingID" formControlName="settingID" />
+  </div>
+
+  <div>
+    <label for="prodottiPerPagina">Prodotti per Pagina:</label>
+    <input type="number" id="prodottiPerPagina" formControlName="prodottiPerPagina" />
+  </div>
+
+  <div>
+    <label for="tema">Tema:</label>
+    <input type="text" id="tema" formControlName="tema" />
+  </div>
+
+  <div>
+    <label for="layout">Layout:</label>
+    <input type="text" id="layout" formControlName="layout" />
+  </div>
+
+  <div>
+    <label for="lingua">Lingua:</label>
+    <input type="text" id="lingua" formControlName="lingua" />
+  </div>
+
+  <div>
+    <label for="limit">Limit:</label>
+    <input type="number" id="limit" formControlName="limit" />
+  </div>
+
+  <div>
+    <label for="offset">Offset:</label>
+    <input type="number" id="offset" formControlName="offset" />
+  </div>
+
+  <button type="submit">Fetch Settings</button>
+</form>
+
+<!-- Visualizza gli elementi delle impostazioni -->
+<div *ngIf="items.length">
+  <h2>Settings Items</h2>
+  <ul>
+    <li *ngFor="let item of items">
+      User ID: {{ item.userID }}, Setting ID: {{ item.settingID }},
+      Prodotti per Pagina: {{ item.prodottiPerPagina }}, Tema: {{ item.tema }},
+      Layout: {{ item.layout }}, Lingua: {{ item.lingua }},
+      Notifiche: {{ item.notifiche | json }}
+    </li>
+  </ul>
+</div>
+
+<!-- Mostra messaggi di errore -->
+<div *ngIf="error">{{ error }}</div>

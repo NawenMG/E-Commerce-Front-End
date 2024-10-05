@@ -1,0 +1,85 @@
+<form [formGroup]="salesForm" (ngSubmit)="fetchSalesMonitoring()">
+  <div>
+    <label for="product">Product:</label>
+    <input type="text" id="product" formControlName="product" />
+  </div>
+
+  <div>
+    <label for="category">Category:</label>
+    <input type="text" id="category" formControlName="category" />
+  </div>
+
+  <div>
+    <label for="venditore">Vendor:</label>
+    <input type="text" id="venditore" formControlName="venditore" />
+  </div>
+
+  <div>
+    <label for="numeroOrdini">Number of Orders:</label>
+    <input type="number" id="numeroOrdini" formControlName="numeroOrdini" />
+  </div>
+
+  <div>
+    <label for="numeroUnitàVendute">Units Sold:</label>
+    <input type="number" id="numeroUnitàVendute" formControlName="numeroUnitàVendute" />
+  </div>
+
+  <div>
+    <label for="ricavo">Revenue:</label>
+    <input type="number" id="ricavo" formControlName="ricavo" />
+  </div>
+
+  <div>
+    <label for="timeStamp">Timestamp:</label>
+    <input type="text" id="timeStamp" formControlName="timeStamp" />
+  </div>
+
+  <div>
+    <label for="measurement">Measurement:</label>
+    <input type="text" id="measurement" formControlName="measurement" />
+  </div>
+
+  <div>
+    <label for="timeRangeStart">Time Range Start:</label>
+    <input type="text" id="timeRangeStart" formControlName="timeRangeStart" />
+  </div>
+
+  <div>
+    <label for="timeRangeEnd">Time Range End:</label>
+    <input type="text" id="timeRangeEnd" formControlName="timeRangeEnd" />
+  </div>
+
+  <div>
+    <label for="limit">Limit:</label>
+    <input type="number" id="limit" formControlName="limit" />
+  </div>
+
+  <div>
+    <label for="offset">Offset:</label>
+    <input type="number" id="offset" formControlName="offset" />
+  </div>
+
+  <button type="submit">Fetch Sales Monitoring</button>
+</form>
+
+<!-- Visualizza i risultati -->
+<div *ngIf="items.length > 0">
+  <h2>Sales Monitoring Results</h2>
+  <ul>
+    <li *ngFor="let sale of items">
+      <h3>Product: {{ sale.product }}</h3>
+      <p>Category: {{ sale.category }}</p>
+      <p>Vendor: {{ sale.venditore }}</p>
+      <p>Number of Orders: {{ sale.numeroOrdini }}</p>
+      <p>Units Sold: {{ sale.numeroUnitaVendute }}</p>
+      <p>Revenue: {{ sale.ricavo }} €</p>
+      <p>Timestamp: {{ sale.timeStamp }}</p>
+    </li>
+  </ul>
+</div>
+
+<!-- Mostra messaggi di caricamento -->
+<div *ngIf="loading">Loading...</div>
+
+<!-- Mostra messaggi di errore -->
+<div *ngIf="error">{{ error }}</div>

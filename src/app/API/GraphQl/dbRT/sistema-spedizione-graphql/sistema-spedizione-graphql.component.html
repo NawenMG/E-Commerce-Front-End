@@ -1,0 +1,68 @@
+<form [formGroup]="spedizioneForm" (ngSubmit)="fetchSpedizioni()">
+  <div>
+    <label for="spedizioneID">Shipment ID:</label>
+    <input type="number" id="spedizioneID" formControlName="spedizioneID" />
+  </div>
+
+  <div>
+    <label for="aziendaInCaricoPerLaSpedizione">Company in Charge:</label>
+    <input type="text" id="aziendaInCaricoPerLaSpedizione" formControlName="aziendaInCaricoPerLaSpedizione" />
+  </div>
+
+  <div>
+    <label for="consegna">Delivered:</label>
+    <input type="checkbox" id="consegna" formControlName="consegna" />
+  </div>
+
+  <div>
+    <label for="dataDiConsegnaPrevista">Expected Delivery Date:</label>
+    <input type="date" id="dataDiConsegnaPrevista" formControlName="dataDiConsegnaPrevista" />
+  </div>
+
+  <div>
+    <label for="locazioneCorrente">Current Location:</label>
+    <input type="text" id="locazioneCorrente" formControlName="locazioneCorrente" />
+  </div>
+
+  <div>
+    <label for="limit">Limit:</label>
+    <input type="number" id="limit" formControlName="limit" />
+  </div>
+
+  <div>
+    <label for="offset">Offset:</label>
+    <input type="number" id="offset" formControlName="offset" />
+  </div>
+
+  <button type="submit">Fetch Shipments</button>
+</form>
+
+<!-- Visualizza le spedizioni -->
+<div *ngIf="items.length">
+  <h2>Shipments</h2>
+  <ul>
+    <li *ngFor="let spedizione of items">
+      <h3>Shipment ID: {{ spedizione.spedizioneID }}</h3>
+      <p>Company in Charge: {{ spedizione.aziendaInCaricoPerLaSpedizione }}</p>
+      <p>Delivered: {{ spedizione.consegna ? 'Yes' : 'No' }}</p>
+      <p>Expected Delivery Date: {{ spedizione.dataDiConsegnaPrevista }}</p>
+      <p>Current Location: {{ spedizione.locazioneCorrente }}</p>
+      <p>Delay: {{ spedizione.ritardo }}</p>
+      <p>Location History: {{ spedizione.storicoLocazioni.join(', ') }}</p>
+      <p>Time Stamp: {{ spedizione.timeStamp }}</p>
+      <h4>Users Involved:</h4>
+      <ul>
+        <li *ngFor="let user of spedizione.utenti">
+          <p>User ID: {{ user.userID }}</p>
+          <p>Name: {{ user.nome }} {{ user.cognome }}</p>
+          <p>Email: {{ user.email }}</p>
+          <p>Address: {{ user.indirizzo }}</p>
+          <p>Phone Number: {{ user.phoneNumber }}</p>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<!-- Mostra messaggi di errore -->
+<div *ngIf="error">{{ error }}</div>
